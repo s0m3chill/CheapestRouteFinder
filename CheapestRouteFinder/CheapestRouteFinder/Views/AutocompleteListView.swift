@@ -12,6 +12,7 @@ struct AutocompleteListView: View {
     @Binding var selectedLocation: String
     @ObservedObject var autocompleteObject: AutocompleteObject
     @Binding var shouldObserveChanges: Bool
+    @State var showList = false
     private let heightProportionToScreen: CGFloat = LayoutConstants.autocompleteHeightToScreenProportion.rawValue
     
     var body: some View {
@@ -27,12 +28,20 @@ struct AutocompleteListView: View {
                             selectedLocation = suggestion
                             autocompleteObject.reset()
                             shouldObserveChanges = false
+                            withAnimation {
+                                showList = false
+                            }
                         }
                     }
-                    .frame(minWidth: 0,
-                           maxWidth: .infinity,
-                           minHeight: 0,
-                           maxHeight: UIScreen.main.bounds.height * heightProportionToScreen)
+                    .frame(maxHeight: showList ? UIScreen.main.bounds.height * heightProportionToScreen : 0)
+                    .opacity(showList ? 1 : 0)
+                    .animation(.default, value: showList)
+                    .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/, value: UUID())
+                    .onAppear {
+                        withAnimation {
+                            showList = true
+                        }
+                    }
                 }
             }
         }
