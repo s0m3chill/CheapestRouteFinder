@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		47EA112B2B25BE3900CD8575 /* ConnectionsDataStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */; };
 		47EA112C2B25BEF900CD8575 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962132B245DFB00EB50AE /* Constants.swift */; };
+		47EA112E2B25C49800CD8575 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 47EA112D2B25C49800CD8575 /* Localizable.xcstrings */; };
+		47EA112F2B25C49800CD8575 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 47EA112D2B25C49800CD8575 /* Localizable.xcstrings */; };
+		47EA11342B25C85600CD8575 /* StringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11332B25C85600CD8575 /* StringsProvider.swift */; };
+		47EA11352B25C85600CD8575 /* StringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11332B25C85600CD8575 /* StringsProvider.swift */; };
 		47F961DF2B245CD300EB50AE /* CheapestRouteFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */; };
 		47F961E32B245CD400EB50AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E22B245CD400EB50AE /* Assets.xcassets */; };
 		47F961E62B245CD400EB50AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E52B245CD400EB50AE /* Preview Assets.xcassets */; };
@@ -69,6 +73,8 @@
 
 /* Begin PBXFileReference section */
 		47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsDataStub.swift; sourceTree = "<group>"; };
+		47EA112D2B25C49800CD8575 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		47EA11332B25C85600CD8575 /* StringsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsProvider.swift; sourceTree = "<group>"; };
 		47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheapestRouteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderApp.swift; sourceTree = "<group>"; };
 		47F961E22B245CD400EB50AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 				47F962082B245D8500EB50AE /* Utils */,
 				47F961E22B245CD400EB50AE /* Assets.xcassets */,
 				47F961E42B245CD400EB50AE /* Preview Content */,
+				47EA112D2B25C49800CD8575 /* Localizable.xcstrings */,
 			);
 			path = CheapestRouteFinder;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 				47F962092B245D9800EB50AE /* AutocompleteObject.swift */,
 				47F9620C2B245DBF00EB50AE /* CheapestRouteCalculator.swift */,
 				47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */,
+				47EA11332B25C85600CD8575 /* StringsProvider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -351,6 +359,7 @@
 			files = (
 				47F961E62B245CD400EB50AE /* Preview Assets.xcassets in Resources */,
 				47F961E32B245CD400EB50AE /* Assets.xcassets in Resources */,
+				47EA112E2B25C49800CD8575 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47EA112F2B25C49800CD8575 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +391,7 @@
 				47F962352B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */,
 				47F962292B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
 				47F962142B245DFB00EB50AE /* Constants.swift in Sources */,
+				47EA11342B25C85600CD8575 /* StringsProvider.swift in Sources */,
 				47F962102B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */,
 				47F962322B245F1100EB50AE /* LocationInputView.swift in Sources */,
 				47F9622C2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */,
@@ -409,6 +420,7 @@
 				47F962412B24602300EB50AE /* RoutesInputViewModelTests.swift in Sources */,
 				47F962112B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */,
 				47F962332B245F1100EB50AE /* LocationInputView.swift in Sources */,
+				47EA11352B25C85600CD8575 /* StringsProvider.swift in Sources */,
 				47F9622D2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */,
 				47F9620E2B245DBF00EB50AE /* CheapestRouteCalculator.swift in Sources */,
 				47F9623D2B245F7300EB50AE /* RouteInputView.swift in Sources */,

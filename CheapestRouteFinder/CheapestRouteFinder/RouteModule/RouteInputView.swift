@@ -31,16 +31,16 @@ struct RouteInputView: View {
                     LocationInputView(location: $viewModel.departureLocation,
                                       autocompleteObject: $viewModel.departureAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDepartureField,
-                                      labelText: "From:",
-                                      placeholderText: "Type in departure city")
+                                      labelText: StringsProvider().string(forKey: .from),
+                                      placeholderText: StringsProvider().string(forKey: .typeDeparture))
                     LocationInputView(location: $viewModel.destinationLocation,
                                       autocompleteObject: $viewModel.destinationAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDestinationField,
-                                      labelText: "To:",
-                                      placeholderText: "Type in destination city")
+                                      labelText: StringsProvider().string(forKey: .to),
+                                      placeholderText: StringsProvider().string(forKey: .typeDestination))
                     HStack {
                         Spacer()
-                        Button("Find cheapest route!") {
+                        Button(StringsProvider().string(forKey: .findCheapestRoute)) {
                             viewModel.findCheapestRoute()
                             isShowingModal = true
                         }
