@@ -16,15 +16,15 @@ struct CheapestRouteModalView: View {
             if viewModel.routeAvailabilityStatus.isAvailable {
                 CheapestRouteTextView(cheapestRoute: viewModel.cheapestRoute)
                 CheapestRouteMapView(cheapestRoute: viewModel.cheapestRoute)
-                    .frame(height: UIScreen.main.bounds.height * 0.3)
+                    .frame(height: UIScreen.main.bounds.height * LayoutConstants.mapToScreenHeightProportion.rawValue)
             } else {
                 RouteAbsentReasonView(reason: viewModel.routeAvailabilityStatus.description)
             }
-            Text("Cheapest route price: \(viewModel.cheapestPrice)$")
+            Text(StringsProvider().string(forKey: .cheapestRoutePrice, viewModel.cheapestPrice))
                 .foregroundColor(.black)
                 .padding()
             
-            Button("Close") {
+            Button(StringsProvider().string(forKey: .close)) {
                 isShowingModal = false
             }
             .padding()
@@ -41,14 +41,14 @@ struct CheapestRouteTextView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading) {
                 ForEach(cheapestRoute, id: \.self) { connection in
-                    Text("From: \(connection.from) to \(connection.to)")
+                    Text(StringsProvider().string(forKey: .fromDepartureToDestination, connection.from, connection.to))
                         .font(.body)
                 }
             }
         }
-        .frame(height: UIScreen.main.bounds.height * 0.2)
+        .frame(height: UIScreen.main.bounds.height * LayoutConstants.cheapestRouteTableHeightToScreenProportion.rawValue)
         .padding()
     }
 }

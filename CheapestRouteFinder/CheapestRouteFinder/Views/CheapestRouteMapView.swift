@@ -20,7 +20,7 @@ final class MapViewCoordinator: NSObject, MKMapViewDelegate {
     
     // MARK: - MKMapViewDelegate
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: Constants.pinReuseId.rawValue)
         annotationView.canShowCallout = false
         return annotationView
     }

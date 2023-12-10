@@ -12,7 +12,7 @@ struct RouteAbsentReasonView: View {
 
     var body: some View {
         VStack {
-            Text("Route is absent")
+            Text(StringsProvider().string(forKey: .routeIsAbsent))
                 .foregroundColor(.red)
                 .font(.headline)
                 .padding()

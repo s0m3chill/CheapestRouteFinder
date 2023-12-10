@@ -15,6 +15,7 @@ final class AutocompleteObject: ObservableObject {
 
     private let delayInSeconds: TimeInterval = 0.1
     private let nanosecondsInSecond: Double = 1_000_000_000
+    private let suggestionCountToShowAutocomplete = 1
         
     private let repository: RoutesRepositoryFetching
     private let cache: AutocompleteCache
@@ -63,7 +64,7 @@ final class AutocompleteObject: ObservableObject {
     
     // MARK: - Private
     private func isSuggestion(in suggestions: Set<String>, equalTo text: String) -> Bool {
-        guard let suggestion = suggestions.first, suggestions.count == 1 else {
+        guard let suggestion = suggestions.first, suggestions.count == suggestionCountToShowAutocomplete else {
             return false
         }
         

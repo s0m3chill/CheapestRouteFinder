@@ -20,13 +20,13 @@ enum RouteAvailabilityStatus: Equatable {
     var description: String {
         switch self {
         case .available:
-            return "Route is available"
+            return StringsProvider().string(forKey: .routeIsAvailable)
         case .routeDoesNotExist:
-            return "Route doesn't exist"
+            return StringsProvider().string(forKey: .routeDostNotExist)
         case .sameLocation(let city):
-            return "Departure and destination are the same: \(city)"
+            return StringsProvider().string(forKey: .routeSameLocation, city)
         case .noLocation:
-            return "Departure and/or destination are empty"
+            return StringsProvider().string(forKey: .routeNoLocation)
         }
     }
 }

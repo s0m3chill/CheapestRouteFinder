@@ -12,7 +12,7 @@ struct AutocompleteListView: View {
     @Binding var selectedLocation: String
     @ObservedObject var autocompleteObject: AutocompleteObject
     @Binding var shouldObserveChanges: Bool
-    private let heightProportionToScreen: CGFloat = 0.2
+    private let heightProportionToScreen: CGFloat = LayoutConstants.autocompleteHeightToScreenProportion.rawValue
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,7 +29,10 @@ struct AutocompleteListView: View {
                             shouldObserveChanges = false
                         }
                     }
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: UIScreen.main.bounds.height * heightProportionToScreen)
+                    .frame(minWidth: 0, 
+                           maxWidth: .infinity,
+                           minHeight: 0,
+                           maxHeight: UIScreen.main.bounds.height * heightProportionToScreen)
                 }
             }
         }
