@@ -11,8 +11,6 @@ struct RouteInputView: View {
     // MARK: - Properties
     @ObservedObject var viewModel: RouteInputViewModel
     @State private var isShowingModal = false
-    @State private var shouldObserveChangesDepartureField = true
-    @State private var shouldObserveChangesDestinationField = true
     
     // MARK: - Initialization
     init(viewModel: RouteInputViewModel){
@@ -33,13 +31,11 @@ struct RouteInputView: View {
                 case .loaded:
                     LocationInputView(location: $viewModel.routeStateManager.departureLocation,
                                       autocompleteObject: $viewModel.departureAutocomplete,
-                                      shouldObserveChanges: $shouldObserveChangesDepartureField,
                                       labelText: StringsProvider().string(forKey: .from),
                                       placeholderText: StringsProvider().string(forKey: .typeDeparture)).equatable()
                     Spacer().frame(height: LayoutConstants.spacerHeight.rawValue)
                     LocationInputView(location: $viewModel.routeStateManager.destinationLocation,
                                       autocompleteObject: $viewModel.destinationAutocomplete,
-                                      shouldObserveChanges: $shouldObserveChangesDestinationField,
                                       labelText: StringsProvider().string(forKey: .to),
                                       placeholderText: StringsProvider().string(forKey: .typeDestination)).equatable()
                     ActionButton(title: StringsProvider().string(forKey: .findCheapestRoute)) {

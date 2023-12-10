@@ -10,7 +10,8 @@ import SwiftUI
 struct AutocompleteTextField: View {
     @Binding var location: String
     @ObservedObject var autocompleteObject: AutocompleteObject
-    @Binding var shouldObserveChanges: Bool
+    // workaround to prevent autocomplete re-trigger right after selecting city from list
+    @Binding var textFieldShouldObserveChanges: Bool
     var labelText: String
     var placeholderText: String
     
@@ -23,11 +24,10 @@ struct AutocompleteTextField: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .onChange(of: location) { oldValue, newValue in
-                        if shouldObserveChanges {
-                            // workaround to prevent autocomplete right after selected from list
+                        if textFieldShouldObserveChanges {
                             autocompleteObject.autocomplete(newValue)
                         } else {
-                            shouldObserveChanges = true
+                            textFieldShouldObserveChanges = true
                         }
                     }
             }
@@ -39,7 +39,7 @@ extension AutocompleteTextField: Equatable {
     static func == (lhs: AutocompleteTextField, rhs: AutocompleteTextField) -> Bool {
         return lhs.location == rhs.location &&
         lhs.autocompleteObject === rhs.autocompleteObject &&
-        lhs.shouldObserveChanges == rhs.shouldObserveChanges &&
+        lhs.textFieldShouldObserveChanges == rhs.textFieldShouldObserveChanges &&
         lhs.labelText == rhs.labelText &&
         lhs.placeholderText == rhs.placeholderText
     }
