@@ -12,7 +12,7 @@ struct AutocompleteListView: View {
     @Binding var selectedSuggestion: String
     @ObservedObject var autocompleteObject: AutocompleteObject
     @Binding var isSuggestionTapped: Bool
-    @State var showList = false
+    @State private var showList = false
     private let heightProportionToScreen: CGFloat = LayoutConstants.autocompleteHeightToScreenProportion.rawValue
     
     var body: some View {

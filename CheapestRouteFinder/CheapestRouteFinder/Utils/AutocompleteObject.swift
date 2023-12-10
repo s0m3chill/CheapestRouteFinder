@@ -14,13 +14,13 @@ final class AutocompleteObject: ObservableObject {
 
     private let suggestionCountToShowAutocomplete = 1
         
-    private let repository: RoutesRepositoryFetching
+    private let repository: RoutesRepositoryCaching
     private var cities: Set<String> {
         return repository.cachedCities()
     }
         
     // MARK: - Initialization
-    init(repository: RoutesRepositoryFetching) {
+    init(repository: RoutesRepositoryCaching) {
         self.repository = repository
     }
     

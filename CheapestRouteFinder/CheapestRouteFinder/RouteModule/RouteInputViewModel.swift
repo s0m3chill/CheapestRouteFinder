@@ -28,11 +28,11 @@ final class RouteInputViewModel: ObservableObject {
         routeStateManager.cheapestPrice
     }
     
-    private let repository: RoutesRepositoryFetching
+    private let repository: RoutesRepositoryFetching & RoutesRepositoryCaching
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Initialization
-    init(repository: RoutesRepositoryFetching) {
+    init(repository: RoutesRepositoryFetching & RoutesRepositoryCaching) {
         self.routeViewModelState = .loading
         self.repository = repository
         self.departureAutocomplete = AutocompleteObject(repository: repository)

@@ -23,6 +23,8 @@
 		47EA11452B25ED7900CD8575 /* CheapestRouteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */; };
 		47EA114A2B2630D000CD8575 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11492B2630D000CD8575 /* Color+Extensions.swift */; };
 		47EA114B2B2630D000CD8575 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11492B2630D000CD8575 /* Color+Extensions.swift */; };
+		47EA114D2B26501600CD8575 /* RoutesRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA114C2B26501600CD8575 /* RoutesRepositoryMock.swift */; };
+		47EA114F2B26504C00CD8575 /* MockUrlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA114E2B26504C00CD8575 /* MockUrlProtocol.swift */; };
 		47F961DF2B245CD300EB50AE /* CheapestRouteFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */; };
 		47F961E32B245CD400EB50AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E22B245CD400EB50AE /* Assets.xcassets */; };
 		47F961E62B245CD400EB50AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E52B245CD400EB50AE /* Preview Assets.xcassets */; };
@@ -90,6 +92,8 @@
 		47EA11402B25E45000CD8575 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteTextView.swift; sourceTree = "<group>"; };
 		47EA11492B2630D000CD8575 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		47EA114C2B26501600CD8575 /* RoutesRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesRepositoryMock.swift; sourceTree = "<group>"; };
+		47EA114E2B26504C00CD8575 /* MockUrlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlProtocol.swift; sourceTree = "<group>"; };
 		47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheapestRouteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderApp.swift; sourceTree = "<group>"; };
 		47F961E22B245CD400EB50AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +158,16 @@
 			path = RouteCalculation;
 			sourceTree = "<group>";
 		};
+		47EA11502B26506300CD8575 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */,
+				47EA114C2B26501600CD8575 /* RoutesRepositoryMock.swift */,
+				47EA114E2B26504C00CD8575 /* MockUrlProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		47F961D22B245CD300EB50AE = {
 			isa = PBXGroup;
 			children = (
@@ -204,10 +218,10 @@
 		47F961EE2B245CD400EB50AE /* CheapestRouteFinderTests */ = {
 			isa = PBXGroup;
 			children = (
+				47EA11502B26506300CD8575 /* Mocks */,
 				47F9623E2B24600700EB50AE /* CheapestRouteCalculatorTests.swift */,
 				47F962402B24602300EB50AE /* RoutesInputViewModelTests.swift */,
 				47F962422B24604300EB50AE /* NetworkServiceTests.swift */,
-				47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */,
 			);
 			path = CheapestRouteFinderTests;
 			sourceTree = "<group>";
@@ -453,10 +467,12 @@
 				47F962362B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */,
 				47F9622A2B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
 				47F962412B24602300EB50AE /* RoutesInputViewModelTests.swift in Sources */,
+				47EA114D2B26501600CD8575 /* RoutesRepositoryMock.swift in Sources */,
 				47F962112B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */,
 				47EA113F2B25E1C800CD8575 /* RouteInputViewModelState.swift in Sources */,
 				47EA113C2B25D5FB00CD8575 /* RouteStateManager.swift in Sources */,
 				47F962332B245F1100EB50AE /* LocationInputView.swift in Sources */,
+				47EA114F2B26504C00CD8575 /* MockUrlProtocol.swift in Sources */,
 				47EA11352B25C85600CD8575 /* StringsProvider.swift in Sources */,
 				47F9622D2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */,
 				47F9620E2B245DBF00EB50AE /* CheapestRouteCalculator.swift in Sources */,

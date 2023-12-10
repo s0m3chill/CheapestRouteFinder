@@ -17,10 +17,10 @@ final class RouteStateManager {
     @Published var cheapestPrice: Int = 0
     @Published var routeAvailabilityStatus: RouteAvailabilityStatus = .available
     
-    private let repository: RoutesRepositoryFetching
+    private let repository: RoutesRepositoryCaching
     
     // MARK: - Initialization
-    init(repository: RoutesRepositoryFetching) {
+    init(repository: RoutesRepositoryCaching) {
         self.repository = repository
     }
     

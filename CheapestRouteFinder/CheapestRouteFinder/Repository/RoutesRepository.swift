@@ -10,6 +10,9 @@ import Combine
 
 protocol RoutesRepositoryFetching: AnyObject {
     func fetchConnections() -> AnyPublisher<[Connection], Error>
+}
+
+protocol RoutesRepositoryCaching: AnyObject {
     func cachedConnections() -> [Connection]
     func cachedCities() -> Set<String>
 }
@@ -49,6 +52,10 @@ extension RoutesRepository: RoutesRepositoryFetching {
             })
             .eraseToAnyPublisher()
     }
+    
+}
+
+extension RoutesRepository: RoutesRepositoryCaching {
     
     func cachedConnections() -> [Connection] {
         return connections

@@ -20,7 +20,7 @@ struct CheapestRouteFinderApp: App {
 final class AppCoordinator {
     @MainActor func start() -> some View {
         let routesDataFetching: RouteDataFetching = NetworkService()
-        let routesRepository: RoutesRepositoryFetching = RoutesRepository(routesDataFetching: routesDataFetching)
+        let routesRepository: RoutesRepositoryFetching & RoutesRepositoryCaching = RoutesRepository(routesDataFetching: routesDataFetching)
         let viewModel = RouteInputViewModel(repository: routesRepository)
         let routesView = RouteInputView(viewModel: viewModel).equatable()
         return routesView
