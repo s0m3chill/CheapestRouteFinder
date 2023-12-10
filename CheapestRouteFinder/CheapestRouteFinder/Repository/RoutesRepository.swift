@@ -16,7 +16,7 @@ protocol RoutesRepositoryFetching: AnyObject {
 
 // We can use this repository for both Network and Database fetching
 // For the demo purposes I've added only Network and cache is 'private(set) var connections: [Connection] = []'
-final class RoutesRepository: RoutesRepositoryFetching, ObservableObject {
+final class RoutesRepository: ObservableObject {
     
     // MARK: - Properties
     private let routesDataFetching: RouteDataFetching
@@ -29,6 +29,10 @@ final class RoutesRepository: RoutesRepositoryFetching, ObservableObject {
     }
     
     // MARK: - API
+}
+
+extension RoutesRepository: RoutesRepositoryFetching {
+    
     func fetchConnections() -> AnyPublisher<[Connection], Error> {
         return routesDataFetching.fetchConnectionsPublisher()
             .receive(on: DispatchQueue.main)
@@ -53,4 +57,5 @@ final class RoutesRepository: RoutesRepositoryFetching, ObservableObject {
     func cachedCities() -> Set<String> {
         return cities
     }
+    
 }

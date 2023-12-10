@@ -20,7 +20,7 @@ struct CheapestRouteFinderApp: App {
 final class AppCoordinator {
     @MainActor func start() -> some View {
         let routesDataFetching: RouteDataFetching = NetworkService()
-        let routesRepository = RoutesRepository(routesDataFetching: routesDataFetching)
+        let routesRepository: RoutesRepositoryFetching = RoutesRepository(routesDataFetching: routesDataFetching)
         let viewModel = RouteInputViewModel(repository: routesRepository,
                                             departureAutocomplete: AutocompleteObject(repository: routesRepository),
                                             destinationAutocomplete: AutocompleteObject(repository: routesRepository))
