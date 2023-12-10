@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LocationInputView: View {
     @Binding var location: String
-    @ObservedObject var autocompleteObject: AutocompleteObject
+    @Binding var autocompleteObject: AutocompleteObject
     @Binding var shouldObserveChanges: Bool
     let labelText: String
     let placeholderText: String

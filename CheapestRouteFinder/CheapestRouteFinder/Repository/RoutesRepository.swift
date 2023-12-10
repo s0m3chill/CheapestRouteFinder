@@ -11,6 +11,7 @@ import Combine
 protocol RoutesRepositoryFetching: AnyObject {
     func fetchConnections() -> AnyPublisher<[Connection], Error>
     func cachedConnections() -> [Connection]
+    func cachedCities() -> Set<String>
 }
 
 // We can use this repository for both Network and Database fetching
@@ -20,7 +21,7 @@ final class RoutesRepository: RoutesRepositoryFetching, ObservableObject {
     // MARK: - Properties
     private let routesDataFetching: RouteDataFetching
     private var connections: [Connection] = []
-    private(set) var cities: Set<String> = Set()
+    private var cities: Set<String> = Set()
     
     // MARK: - Initialization
     init(routesDataFetching: RouteDataFetching) {
@@ -47,5 +48,9 @@ final class RoutesRepository: RoutesRepositoryFetching, ObservableObject {
     
     func cachedConnections() -> [Connection] {
         return connections
+    }
+    
+    func cachedCities() -> Set<String> {
+        return cities
     }
 }

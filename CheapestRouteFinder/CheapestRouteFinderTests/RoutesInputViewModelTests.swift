@@ -22,12 +22,14 @@ final class RoutesInputViewModelTests: XCTestCase {
     ]
     
     // MARK: - Setup
-    override func setUp() {
+    @MainActor override func setUp() {
         super.setUp()
         
         let repository = RoutesRepositoryMock()
         self.repository = repository
-        sut = RouteInputViewModel(repository: repository)
+        sut = RouteInputViewModel(repository: repository,
+                                  departureAutocomplete: AutocompleteObject(repository: repository),
+                                  destinationAutocomplete: AutocompleteObject(repository: repository))
     }
     
     override func tearDown() {
@@ -118,6 +120,7 @@ final class RoutesRepositoryMock: RoutesRepositoryFetching {
         case none
         case fetchConnections
         case cachedConnections
+        case cachedCities
     }
     var isCalled: IsCalled = .none
     
@@ -134,5 +137,10 @@ final class RoutesRepositoryMock: RoutesRepositoryFetching {
     func cachedConnections() -> [Connection] {
         isCalled = .cachedConnections
         return connections
+    }
+    
+    func cachedCities() -> Set<String> {
+        isCalled = .cachedCities
+        return Set()
     }
 }

@@ -16,13 +16,13 @@ final class AutocompleteObject: ObservableObject {
     private let delayInSeconds: TimeInterval = 0.1
     private let nanosecondsInSecond: Double = 1_000_000_000
         
-    private let repository: RoutesRepository
+    private let repository: RoutesRepositoryFetching
     private let cache: AutocompleteCache
     
     private var task: Task<Void, Never>?
     
     // MARK: - Initialization
-    init(repository: RoutesRepository) {
+    init(repository: RoutesRepositoryFetching) {
         self.repository = repository
         cache = AutocompleteCache(source: repository)
     }
@@ -74,13 +74,13 @@ final class AutocompleteObject: ObservableObject {
 fileprivate actor AutocompleteCache {
     
     // MARK: - Properties
-    private let source: RoutesRepository
+    private let source: RoutesRepositoryFetching
     private var cities: Set<String> {
-        return source.cities
+        return source.cachedCities()
     }
     
     // MARK: - Initialization
-    fileprivate init(source: RoutesRepository) {
+    fileprivate init(source: RoutesRepositoryFetching) {
         self.source = source
     }
     

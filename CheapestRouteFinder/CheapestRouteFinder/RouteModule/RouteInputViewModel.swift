@@ -17,6 +17,8 @@ final class RouteInputViewModel: ObservableObject {
     @Published var cheapestRoute: [Connection] = []
     @Published var cheapestPrice: Int = 0
     @Published var routeAvailabilityStatus: RouteAvailabilityStatus = .available
+    @Published var departureAutocomplete: AutocompleteObject
+    @Published var destinationAutocomplete: AutocompleteObject
     var connections: [Connection] {
         repository.cachedConnections()
     }
@@ -25,8 +27,12 @@ final class RouteInputViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Initialization
-    init(repository: RoutesRepositoryFetching) {
+    init(repository: RoutesRepositoryFetching,
+         departureAutocomplete: AutocompleteObject,
+         destinationAutocomplete: AutocompleteObject) {
         self.repository = repository
+        self.departureAutocomplete = departureAutocomplete
+        self.destinationAutocomplete = destinationAutocomplete
     }
     
     // MARK: - API

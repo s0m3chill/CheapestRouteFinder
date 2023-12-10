@@ -10,19 +10,13 @@ import SwiftUI
 struct RouteInputView: View {
     // MARK: - Properties
     @ObservedObject var viewModel: RouteInputViewModel
-    @StateObject var departureAutocomplete: AutocompleteObject
-    @StateObject var destinationAutocomplete: AutocompleteObject
     @State private var isShowingModal = false
     @State private var shouldObserveChangesDepartureField = true
     @State private var shouldObserveChangesDestinationField = true
     
     // MARK: - Initialization
-    init(viewModel: RouteInputViewModel,
-         departureAutocomplete: AutocompleteObject,
-         destinationAutocomplete: AutocompleteObject){
+    init(viewModel: RouteInputViewModel){
         self.viewModel = viewModel
-        _departureAutocomplete = StateObject(wrappedValue: departureAutocomplete)
-        _destinationAutocomplete = StateObject(wrappedValue: destinationAutocomplete)
     }
     
     // MARK: - View Content
@@ -35,15 +29,15 @@ struct RouteInputView: View {
                         .padding()
                 } else {
                     LocationInputView(location: $viewModel.departureLocation,
-                                      autocompleteObject: departureAutocomplete,
+                                      autocompleteObject: $viewModel.departureAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDepartureField,
                                       labelText: "From:",
-                                      placeholderText: "Select departure city")
+                                      placeholderText: "Type in departure city")
                     LocationInputView(location: $viewModel.destinationLocation,
-                                      autocompleteObject: destinationAutocomplete,
+                                      autocompleteObject: $viewModel.destinationAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDestinationField,
                                       labelText: "To:",
-                                      placeholderText: "Select destination city")
+                                      placeholderText: "Type in destination city")
                     HStack {
                         Spacer()
                         Button("Find cheapest route!") {
