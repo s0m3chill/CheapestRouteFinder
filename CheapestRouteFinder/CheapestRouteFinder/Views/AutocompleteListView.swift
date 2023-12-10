@@ -42,6 +42,7 @@ struct AutocompleteListView: View {
                             showList = true
                         }
                     }
+                    .listStyle(PlainListStyle())
                 }
             }
         }
