@@ -7,59 +7,41 @@
 
 import Foundation
 
-@MainActor
 final class AutocompleteObject: ObservableObject {
     
     // MARK: - Properties
     @Published var suggestions: Set<String> = Set()
 
-    private let delayInSeconds: TimeInterval = 0.1
-    private let nanosecondsInSecond: Double = 1_000_000_000
     private let suggestionCountToShowAutocomplete = 1
         
     private let repository: RoutesRepositoryFetching
-    private let cache: AutocompleteCache
-    
-    private var task: Task<Void, Never>?
-    
+    private var cities: Set<String> {
+        return repository.cachedCities()
+    }
+        
     // MARK: - Initialization
     init(repository: RoutesRepositoryFetching) {
         self.repository = repository
-        cache = AutocompleteCache(source: repository)
     }
     
     // MARK: - API
     func autocomplete(_ text: String) {
         guard !text.isEmpty else {
             suggestions = []
-            task?.cancel()
             return
         }
         
-        task?.cancel()
+        let newSuggestions = lookup(text: text)
         
-        task = Task {
-            guard ((try? await Task.sleep(nanoseconds: UInt64(delayInSeconds * nanosecondsInSecond))) != nil) else {
-                return
-            }
-            
-            guard !Task.isCancelled else {
-                return
-            }
-            
-            let newSuggestions = await cache.lookup(text: text)
-            
-            if isSuggestion(in: suggestions, equalTo: text) {
-                reset()
-            } else {
-                suggestions = newSuggestions
-            }
+        if isSuggestion(in: suggestions, equalTo: text) {
+            reset()
+        } else {
+            suggestions = newSuggestions
         }
     }
     
     func reset() {
         suggestions = []
-        task?.cancel()
     }
     
     // MARK: - Private
@@ -70,23 +52,8 @@ final class AutocompleteObject: ObservableObject {
         
         return suggestion.lowercased() == text.lowercased()
     }
-}
-
-fileprivate actor AutocompleteCache {
     
-    // MARK: - Properties
-    private let source: RoutesRepositoryFetching
-    private var cities: Set<String> {
-        return source.cachedCities()
-    }
-    
-    // MARK: - Initialization
-    fileprivate init(source: RoutesRepositoryFetching) {
-        self.source = source
-    }
-    
-    // MARK: - API
-    fileprivate func lookup(text: String) -> Set<String> {
+    private func lookup(text: String) -> Set<String> {
         let filteredCities = cities.filter { $0.lowercased().localizedCaseInsensitiveContains(text) }
         return filteredCities
     }

@@ -32,13 +32,11 @@ final class RouteInputViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Initialization
-    init(repository: RoutesRepositoryFetching,
-         departureAutocomplete: AutocompleteObject,
-         destinationAutocomplete: AutocompleteObject) {
+    init(repository: RoutesRepositoryFetching) {
         self.routeViewModelState = .loading
         self.repository = repository
-        self.departureAutocomplete = departureAutocomplete
-        self.destinationAutocomplete = destinationAutocomplete
+        self.departureAutocomplete = AutocompleteObject(repository: repository)
+        self.destinationAutocomplete = AutocompleteObject(repository: repository)
         self.routeStateManager = RouteStateManager(repository: repository)
     }
     
