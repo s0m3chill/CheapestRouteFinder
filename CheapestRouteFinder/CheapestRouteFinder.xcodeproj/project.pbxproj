@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47EA112B2B25BE3900CD8575 /* ConnectionsDataStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */; };
+		47EA112C2B25BEF900CD8575 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962132B245DFB00EB50AE /* Constants.swift */; };
 		47F961DF2B245CD300EB50AE /* CheapestRouteFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */; };
 		47F961E32B245CD400EB50AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E22B245CD400EB50AE /* Assets.xcassets */; };
 		47F961E62B245CD400EB50AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E52B245CD400EB50AE /* Preview Assets.xcassets */; };
@@ -66,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsDataStub.swift; sourceTree = "<group>"; };
 		47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheapestRouteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderApp.swift; sourceTree = "<group>"; };
 		47F961E22B245CD400EB50AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 				47F9623E2B24600700EB50AE /* CheapestRouteCalculatorTests.swift */,
 				47F962402B24602300EB50AE /* RoutesInputViewModelTests.swift */,
 				47F962422B24604300EB50AE /* NetworkServiceTests.swift */,
+				47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */,
 			);
 			path = CheapestRouteFinderTests;
 			sourceTree = "<group>";
@@ -410,8 +414,10 @@
 				47F9623D2B245F7300EB50AE /* RouteInputView.swift in Sources */,
 				47F962272B245EAB00EB50AE /* AutocompleteListView.swift in Sources */,
 				47F962302B245EF900EB50AE /* CheapestRouteModalView.swift in Sources */,
+				47EA112C2B25BEF900CD8575 /* Constants.swift in Sources */,
 				47F9620B2B245D9800EB50AE /* AutocompleteObject.swift in Sources */,
 				47F962232B245E7800EB50AE /* RoutesRepository.swift in Sources */,
+				47EA112B2B25BE3900CD8575 /* ConnectionsDataStub.swift in Sources */,
 				47F9623A2B245F5700EB50AE /* RouteInputViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
