@@ -45,6 +45,13 @@ struct AutocompleteListView: View {
                 }
             }
         }
+        .onChange(of: suggestions.isEmpty) { oldValue, suggestionsEmpty in
+            if suggestionsEmpty {
+                withAnimation {
+                    showList = false
+                }
+            }
+        }
     }
 }
 
