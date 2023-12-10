@@ -12,15 +12,20 @@ final class RouteInputViewModel: ObservableObject {
     
     // MARK: - Properties
     @Published var errorMessage: String?
-    @Published var departureLocation: String = ""
-    @Published var destinationLocation: String = ""
-    @Published var cheapestRoute: [Connection] = []
-    @Published var cheapestPrice: Int = 0
-    @Published var routeAvailabilityStatus: RouteAvailabilityStatus = .available
+    @Published var routeStateManager: RouteStateManager
     @Published var departureAutocomplete: AutocompleteObject
     @Published var destinationAutocomplete: AutocompleteObject
     var connections: [Connection] {
         repository.cachedConnections()
+    }
+    var routeAvailabilityStatus: RouteAvailabilityStatus {
+        routeStateManager.routeAvailabilityStatus
+    }
+    var cheapestRoute: [Connection] {
+        routeStateManager.cheapestRoute
+    }
+    var cheapestPrice: Int {
+        routeStateManager.cheapestPrice
     }
     
     private let repository: RoutesRepositoryFetching
@@ -33,6 +38,7 @@ final class RouteInputViewModel: ObservableObject {
         self.repository = repository
         self.departureAutocomplete = departureAutocomplete
         self.destinationAutocomplete = destinationAutocomplete
+        self.routeStateManager = RouteStateManager(repository: repository)
     }
     
     // MARK: - API
@@ -49,18 +55,6 @@ final class RouteInputViewModel: ObservableObject {
     }
     
     func findCheapestRoute() {
-        routeAvailabilityStatus = RouteAvailabilityChecker(fromLocation: departureLocation,
-                                                           toLocation: destinationLocation).routeAvailabilityStatus()
-        guard routeAvailabilityStatus.isAvailable else {
-            cheapestRoute = []
-            cheapestPrice = 0
-            return
-        }
-        
-        let calculator = CheapestRouteCalculator(connections: repository.cachedConnections())
-        let cheapestResult = calculator.calculateCheapestRoute(from: departureLocation, to: destinationLocation)
-        cheapestRoute = cheapestResult.route
-        cheapestPrice = cheapestResult.price
-        routeAvailabilityStatus = cheapestRoute.isEmpty ? .routeDoesNotExist : .available
+        routeStateManager.calculateCheapestRoute()
     }
 }

@@ -28,12 +28,12 @@ struct RouteInputView: View {
                         .foregroundColor(.red)
                         .padding()
                 } else {
-                    LocationInputView(location: $viewModel.departureLocation,
+                    LocationInputView(location: $viewModel.routeStateManager.departureLocation,
                                       autocompleteObject: $viewModel.departureAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDepartureField,
                                       labelText: StringsProvider().string(forKey: .from),
                                       placeholderText: StringsProvider().string(forKey: .typeDeparture))
-                    LocationInputView(location: $viewModel.destinationLocation,
+                    LocationInputView(location: $viewModel.routeStateManager.destinationLocation,
                                       autocompleteObject: $viewModel.destinationAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDestinationField,
                                       labelText: StringsProvider().string(forKey: .to),

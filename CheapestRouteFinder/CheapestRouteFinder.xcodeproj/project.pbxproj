@@ -13,6 +13,8 @@
 		47EA112F2B25C49800CD8575 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 47EA112D2B25C49800CD8575 /* Localizable.xcstrings */; };
 		47EA11342B25C85600CD8575 /* StringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11332B25C85600CD8575 /* StringsProvider.swift */; };
 		47EA11352B25C85600CD8575 /* StringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11332B25C85600CD8575 /* StringsProvider.swift */; };
+		47EA113B2B25D5FB00CD8575 /* RouteStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA113A2B25D5FB00CD8575 /* RouteStateManager.swift */; };
+		47EA113C2B25D5FB00CD8575 /* RouteStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA113A2B25D5FB00CD8575 /* RouteStateManager.swift */; };
 		47F961DF2B245CD300EB50AE /* CheapestRouteFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */; };
 		47F961E32B245CD400EB50AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E22B245CD400EB50AE /* Assets.xcassets */; };
 		47F961E62B245CD400EB50AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E52B245CD400EB50AE /* Preview Assets.xcassets */; };
@@ -75,6 +77,7 @@
 		47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsDataStub.swift; sourceTree = "<group>"; };
 		47EA112D2B25C49800CD8575 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		47EA11332B25C85600CD8575 /* StringsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsProvider.swift; sourceTree = "<group>"; };
+		47EA113A2B25D5FB00CD8575 /* RouteStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStateManager.swift; sourceTree = "<group>"; };
 		47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheapestRouteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderApp.swift; sourceTree = "<group>"; };
 		47F961E22B245CD400EB50AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +132,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47EA11392B25D5A500CD8575 /* RouteCalculation */ = {
+			isa = PBXGroup;
+			children = (
+				47EA113A2B25D5FB00CD8575 /* RouteStateManager.swift */,
+				47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */,
+				47F9620C2B245DBF00EB50AE /* CheapestRouteCalculator.swift */,
+			);
+			path = RouteCalculation;
+			sourceTree = "<group>";
+		};
 		47F961D22B245CD300EB50AE = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 				47F962242B245E9F00EB50AE /* Views */,
 				47F962202B245E6C00EB50AE /* Repository */,
 				47F9621C2B245E4100EB50AE /* Network */,
+				47EA11392B25D5A500CD8575 /* RouteCalculation */,
 				47F962082B245D8500EB50AE /* Utils */,
 				47F961E22B245CD400EB50AE /* Assets.xcassets */,
 				47F961E42B245CD400EB50AE /* Preview Content */,
@@ -199,8 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				47F962092B245D9800EB50AE /* AutocompleteObject.swift */,
-				47F9620C2B245DBF00EB50AE /* CheapestRouteCalculator.swift */,
-				47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */,
 				47EA11332B25C85600CD8575 /* StringsProvider.swift */,
 			);
 			path = Utils;
@@ -387,6 +399,7 @@
 			files = (
 				47F9621A2B245E2100EB50AE /* RouteData.swift in Sources */,
 				47F962172B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */,
+				47EA113B2B25D5FB00CD8575 /* RouteStateManager.swift in Sources */,
 				47F9621E2B245E4E00EB50AE /* NetworkService.swift in Sources */,
 				47F962352B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */,
 				47F962292B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
@@ -419,6 +432,7 @@
 				47F9622A2B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
 				47F962412B24602300EB50AE /* RoutesInputViewModelTests.swift in Sources */,
 				47F962112B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */,
+				47EA113C2B25D5FB00CD8575 /* RouteStateManager.swift in Sources */,
 				47F962332B245F1100EB50AE /* LocationInputView.swift in Sources */,
 				47EA11352B25C85600CD8575 /* StringsProvider.swift in Sources */,
 				47F9622D2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */,

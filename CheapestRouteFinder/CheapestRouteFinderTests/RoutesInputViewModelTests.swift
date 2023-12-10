@@ -83,8 +83,8 @@ final class RoutesInputViewModelTests: XCTestCase {
     
     func testFindCheapestRouteCalledWithSelectedCities() {
         repository.connections = connections
-        sut.departureLocation = "A"
-        sut.destinationLocation = "D"
+        sut.routeStateManager.departureLocation = "A"
+        sut.routeStateManager.destinationLocation = "D"
         sut.findCheapestRoute()
         XCTAssertNotEqual(sut.cheapestRoute.count, 0)
     }
@@ -97,8 +97,8 @@ final class RoutesInputViewModelTests: XCTestCase {
     
     func testFindCheapestRouteCalledWithSameCity() {
         repository.connections = connections
-        sut.departureLocation = "A"
-        sut.destinationLocation = "A"
+        sut.routeStateManager.departureLocation = "A"
+        sut.routeStateManager.destinationLocation = "A"
         sut.findCheapestRoute()
         XCTAssertEqual(sut.routeAvailabilityStatus, .sameLocation("A"))
     }
