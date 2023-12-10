@@ -112,7 +112,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Departure and destination cities are the same: %1$@"
+            "value" : "Departure and destination city is the same: %1$@"
           }
         }
       }
