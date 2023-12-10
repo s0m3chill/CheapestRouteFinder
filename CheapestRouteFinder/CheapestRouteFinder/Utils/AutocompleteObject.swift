@@ -46,7 +46,7 @@ final class AutocompleteObject: ObservableObject {
                 return
             }
             
-            let newSuggestions = await cache.lookup(prefix: text)
+            let newSuggestions = await cache.lookup(text: text)
             
             if isSuggestion(in: suggestions, equalTo: text) {
                 reset()
@@ -85,8 +85,8 @@ fileprivate actor AutocompleteCache {
     }
     
     // MARK: - API
-    fileprivate func lookup(prefix: String) -> Set<String> {
-        let filteredFrom = cities.filter { $0.lowercased().hasPrefix(prefix.lowercased()) }
-        return filteredFrom
+    fileprivate func lookup(text: String) -> Set<String> {
+        let filteredCities = cities.filter { $0.lowercased().localizedCaseInsensitiveContains(text) }
+        return filteredCities
     }
 }
