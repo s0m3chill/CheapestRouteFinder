@@ -50,10 +50,10 @@ final class RoutesInputViewModelTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Fetch connections success")
         
         repository.connections = connections
-        sut.$errorMessage
+        sut.$routeViewModelState
             .dropFirst()
-            .sink { errorMessage in
-                XCTAssertNil(errorMessage)
+            .sink { state in
+                XCTAssertEqual(state, .loaded)
                 expectation.fulfill()
             }
             .store(in: &cancellables)
@@ -69,10 +69,10 @@ final class RoutesInputViewModelTests: XCTestCase {
         let error = NSError(domain: "TestError", code: 404, userInfo: nil)
         repository.error = error
         
-        sut.$errorMessage
+        sut.$routeViewModelState
             .dropFirst()
-            .sink { errorMessage in
-                XCTAssertEqual(errorMessage, error.localizedDescription)
+            .sink { state in
+                XCTAssertEqual(state, .error("The operation couldn’t be completed. (TestError error 404.)"))
                 expectation.fulfill()
             }
             .store(in: &cancellables)

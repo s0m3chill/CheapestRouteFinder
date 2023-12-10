@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RouteInputViewModelState {
+enum RouteInputViewModelState: Equatable {
     case loading
     case error(String)
     case loaded
