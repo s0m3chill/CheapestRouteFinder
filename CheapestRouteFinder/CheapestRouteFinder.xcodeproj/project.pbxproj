@@ -19,7 +19,6 @@
 		47F962102B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */; };
 		47F962112B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */; };
 		47F962142B245DFB00EB50AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962132B245DFB00EB50AE /* Constants.swift */; };
-		47F962152B245DFB00EB50AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962132B245DFB00EB50AE /* Constants.swift */; };
 		47F962172B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962162B245E1200EB50AE /* RouteAvailabilityStatus.swift */; };
 		47F962182B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962162B245E1200EB50AE /* RouteAvailabilityStatus.swift */; };
 		47F9621A2B245E2100EB50AE /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962192B245E2100EB50AE /* RouteData.swift */; };
@@ -145,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */,
+				47F962132B245DFB00EB50AE /* Constants.swift */,
 				47F962122B245DF000EB50AE /* Model */,
 				47F962372B245F3F00EB50AE /* RouteModule */,
 				47F962242B245E9F00EB50AE /* Views */,
@@ -197,7 +197,6 @@
 		47F962122B245DF000EB50AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				47F962132B245DFB00EB50AE /* Constants.swift */,
 				47F962162B245E1200EB50AE /* RouteAvailabilityStatus.swift */,
 				47F962192B245E2100EB50AE /* RouteData.swift */,
 			);
@@ -404,7 +403,6 @@
 				47F962362B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */,
 				47F9622A2B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
 				47F962412B24602300EB50AE /* RoutesInputViewModelTests.swift in Sources */,
-				47F962152B245DFB00EB50AE /* Constants.swift in Sources */,
 				47F962112B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */,
 				47F962332B245F1100EB50AE /* LocationInputView.swift in Sources */,
 				47F9622D2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */,
