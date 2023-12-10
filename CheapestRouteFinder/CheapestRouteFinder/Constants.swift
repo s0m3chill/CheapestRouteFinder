@@ -17,6 +17,7 @@ enum HTTPResponseCode: Int {
 }
 
 enum LayoutConstants: CGFloat {
+    case spacerHeight = 16
     case autocompleteHeightToScreenProportion = 0.2
     case cheapestRouteTableHeightToScreenProportion = 0.15
     case mapToScreenHeightProportion = 0.3

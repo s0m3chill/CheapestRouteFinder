@@ -36,6 +36,7 @@ struct RouteInputView: View {
                                       shouldObserveChanges: $shouldObserveChangesDepartureField,
                                       labelText: StringsProvider().string(forKey: .from),
                                       placeholderText: StringsProvider().string(forKey: .typeDeparture)).equatable()
+                    Spacer().frame(height: LayoutConstants.spacerHeight.rawValue)
                     LocationInputView(location: $viewModel.routeStateManager.destinationLocation,
                                       autocompleteObject: $viewModel.destinationAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDestinationField,

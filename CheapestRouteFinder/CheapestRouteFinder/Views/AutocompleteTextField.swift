@@ -29,7 +29,6 @@ struct AutocompleteTextField: View {
                     }
                 }
         }
-        .padding()
     }
 }
 
