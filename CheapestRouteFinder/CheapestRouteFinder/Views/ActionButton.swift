@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ActionButton: View {
-    @Binding var isShowingModal: Bool
+    let title: String
     let action: () -> Void
     
     var body: some View {
         HStack {
             Spacer()
-            Button(StringsProvider().string(forKey: .findCheapestRoute)) {
+            Button(title) {
                 action()
             }
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color.blue)
+            .background(Color.themeColor)
             .foregroundColor(.white)
+            .addBorder(Color.white, width: LayoutConstants.borderWidth.rawValue, cornerRadius: LayoutConstants.cornerRadius.rawValue)
             Spacer()
         }
         .padding(.vertical)
@@ -29,6 +30,6 @@ struct ActionButton: View {
 
 extension ActionButton: Equatable {
     static func == (lhs: ActionButton, rhs: ActionButton) -> Bool {
-        return lhs.isShowingModal == rhs.isShowingModal
+        return lhs.title == rhs.title
     }
 }

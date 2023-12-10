@@ -28,7 +28,7 @@ final class MapViewCoordinator: NSObject, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let polyline = overlay as? MKPolyline {
             let renderer = MKPolylineRenderer(overlay: polyline)
-            renderer.strokeColor = .red
+            renderer.strokeColor = UIColor(Color.themeColor)
             renderer.lineWidth = 3
             renderer.lineJoin = .round
             renderer.lineCap = .round

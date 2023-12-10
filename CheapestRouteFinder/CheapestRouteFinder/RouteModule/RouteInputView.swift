@@ -41,7 +41,7 @@ struct RouteInputView: View {
                                       shouldObserveChanges: $shouldObserveChangesDestinationField,
                                       labelText: StringsProvider().string(forKey: .to),
                                       placeholderText: StringsProvider().string(forKey: .typeDestination)).equatable()
-                    ActionButton(isShowingModal: $isShowingModal) {
+                    ActionButton(title: StringsProvider().string(forKey: .findCheapestRoute)) {
                         hideKeyboardOnButtonTap()
                         viewModel.findCheapestRoute()
                         isShowingModal = true

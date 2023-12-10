@@ -4,13 +4,24 @@
     "" : {
 
     },
+    "%@ to %@. Price %d" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ to %2$@. Price: %d$"
+          }
+        }
+      }
+    },
     "Cheapest Route Price: %d" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cheapest route price: %d $"
+            "value" : "Total price of this route: %d$"
           }
         }
       }
@@ -40,12 +51,24 @@
         }
       }
     },
-    "From: %@ to %@" : {
+    "From %@ to %@ route" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "From: %1$@ to %2$@"
+            "state" : "translated",
+            "value" : "The cheapest route from %1$@ to %2$@ is:"
+          }
+        }
+      }
+    },
+    "Reason" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reason"
           }
         }
       }
@@ -78,7 +101,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Departure and/or destination are empty"
+            "value" : "Departure and/or destination cities are empty"
           }
         }
       }
@@ -89,7 +112,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Departure and destination are the same: %1$@"
+            "value" : "Departure and destination cities are the same: %1$@"
           }
         }
       }

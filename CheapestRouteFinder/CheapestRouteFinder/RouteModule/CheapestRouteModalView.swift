@@ -17,19 +17,18 @@ struct CheapestRouteModalView: View {
                 CheapestRouteTextView(cheapestRoute: viewModel.cheapestRoute).equatable()
                 CheapestRouteMapView(cheapestRoute: viewModel.cheapestRoute)
                     .frame(height: UIScreen.main.bounds.height * LayoutConstants.mapToScreenHeightProportion.rawValue)
+                Text(StringsProvider().string(forKey: .cheapestRoutePrice, viewModel.cheapestPrice))
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .padding()
             } else {
-                RouteAbsentReasonView(reason: viewModel.routeAvailabilityStatus.description)
+                RouteAbsentReasonView(reason: viewModel.routeAvailabilityStatus.description).equatable()
             }
-            Text(StringsProvider().string(forKey: .cheapestRoutePrice, viewModel.cheapestPrice))
-                .foregroundColor(.black)
-                .padding()
-            
-            Button(StringsProvider().string(forKey: .close)) {
+            ActionButton(title: StringsProvider().string(forKey: .close)) {
                 isShowingModal = false
-            }
+            }.equatable()
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color.blue)
             .foregroundColor(.white)
         }
         .padding()

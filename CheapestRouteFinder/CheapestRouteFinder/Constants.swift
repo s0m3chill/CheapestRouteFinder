@@ -20,6 +20,8 @@ enum LayoutConstants: CGFloat {
     case autocompleteHeightToScreenProportion = 0.2
     case cheapestRouteTableHeightToScreenProportion = 0.15
     case mapToScreenHeightProportion = 0.3
+    case borderWidth = 1
+    case cornerRadius = 10
 }
 
 enum L10N: String {
@@ -29,9 +31,11 @@ enum L10N: String {
     case typeDeparture = "TypeDeparture"
     case typeDestination = "TypeDestination"
     case close = "Close"
+    case reason = "Reason"
     case routeIsAbsent = "Route Is Absent"
     case cheapestRoutePrice = "Cheapest Route Price: %d"
-    case fromDepartureToDestination = "From: %@ to %@"
+    case cheapestRouteDescription = "From %@ to %@ route"
+    case fromDepartureToDestination = "%@ to %@. Price: %d$"
     case routeIsAvailable = "RouteIsAvailable"
     case routeDostNotExist = "RouteDoesNotExist"
     case routeNoLocation = "RouteNoLocation"
