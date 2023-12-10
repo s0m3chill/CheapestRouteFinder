@@ -16,18 +16,21 @@ struct AutocompleteTextField: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(labelText)
-            TextField(placeholderText, text: $location)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .autocorrectionDisabled()
-                .onChange(of: location) { oldValue, newValue in
-                    if shouldObserveChanges {
-                        // workaround to prevent autocomplete right after selected from list
-                        autocompleteObject.autocomplete(newValue)
-                    } else {
-                        shouldObserveChanges = true
+            HStack {
+                Text(labelText)
+                    .frame(width: LayoutConstants.prefixTitleWidth.rawValue, alignment: .leading)
+                TextField(placeholderText, text: $location)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocorrectionDisabled()
+                    .onChange(of: location) { oldValue, newValue in
+                        if shouldObserveChanges {
+                            // workaround to prevent autocomplete right after selected from list
+                            autocompleteObject.autocomplete(newValue)
+                        } else {
+                            shouldObserveChanges = true
+                        }
                     }
-                }
+            }
         }
     }
 }
