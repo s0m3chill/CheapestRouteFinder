@@ -41,6 +41,7 @@ struct RouteInputView: View {
                     HStack {
                         Spacer()
                         Button(StringsProvider().string(forKey: .findCheapestRoute)) {
+                            hideKeyboardOnButtonTap()
                             viewModel.findCheapestRoute()
                             isShowingModal = true
                         }
@@ -61,5 +62,10 @@ struct RouteInputView: View {
         .sheet(isPresented: $isShowingModal) {
             CheapestRouteModalView(viewModel: viewModel, isShowingModal: $isShowingModal)
         }
+    }
+    
+    // MARK: - Private
+    private func hideKeyboardOnButtonTap() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
