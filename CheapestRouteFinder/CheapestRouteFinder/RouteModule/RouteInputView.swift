@@ -13,8 +13,8 @@ struct RouteInputView: View {
     @StateObject var departureAutocomplete: AutocompleteObject
     @StateObject var destinationAutocomplete: AutocompleteObject
     @State private var isShowingModal = false
-    @State private var shouldObserveChangesInFromField = true
-    @State private var shouldObserveChangesInToField = true
+    @State private var shouldObserveChangesDepartureField = true
+    @State private var shouldObserveChangesDestinationField = true
     
     // MARK: - Initialization
     init(viewModel: RouteInputViewModel,
@@ -34,16 +34,16 @@ struct RouteInputView: View {
                         .foregroundColor(.red)
                         .padding()
                 } else {
-                    LocationInputView(location: $viewModel.fromLocation,
+                    LocationInputView(location: $viewModel.departureLocation,
                                       autocompleteObject: departureAutocomplete,
-                                      shouldObserveChanges: $shouldObserveChangesInFromField,
+                                      shouldObserveChanges: $shouldObserveChangesDepartureField,
                                       labelText: "From:",
-                                      placeholderText: "Select departure")
-                    LocationInputView(location: $viewModel.toLocation,
+                                      placeholderText: "Select departure city")
+                    LocationInputView(location: $viewModel.destinationLocation,
                                       autocompleteObject: destinationAutocomplete,
-                                      shouldObserveChanges: $shouldObserveChangesInToField,
+                                      shouldObserveChanges: $shouldObserveChangesDestinationField,
                                       labelText: "To:",
-                                      placeholderText: "Select destination")
+                                      placeholderText: "Select destination city")
                     HStack {
                         Spacer()
                         Button("Find cheapest route!") {

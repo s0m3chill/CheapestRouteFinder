@@ -12,8 +12,8 @@ final class RouteInputViewModel: ObservableObject {
     
     // MARK: - Properties
     @Published var errorMessage: String?
-    @Published var fromLocation: String = ""
-    @Published var toLocation: String = ""
+    @Published var departureLocation: String = ""
+    @Published var destinationLocation: String = ""
     @Published var cheapestRoute: [Connection] = []
     @Published var cheapestPrice: Int = 0
     @Published var routeAvailabilityStatus: RouteAvailabilityStatus = .available
@@ -43,8 +43,8 @@ final class RouteInputViewModel: ObservableObject {
     }
     
     func findCheapestRoute() {
-        routeAvailabilityStatus = RouteAvailabilityChecker(fromLocation: fromLocation,
-                                                           toLocation: toLocation).routeAvailabilityStatus()
+        routeAvailabilityStatus = RouteAvailabilityChecker(fromLocation: departureLocation,
+                                                           toLocation: destinationLocation).routeAvailabilityStatus()
         guard routeAvailabilityStatus.isAvailable else {
             cheapestRoute = []
             cheapestPrice = 0
@@ -52,7 +52,7 @@ final class RouteInputViewModel: ObservableObject {
         }
         
         let calculator = CheapestRouteCalculator(connections: repository.cachedConnections())
-        let cheapestResult = calculator.calculateCheapestRoute(from: fromLocation, to: toLocation)
+        let cheapestResult = calculator.calculateCheapestRoute(from: departureLocation, to: destinationLocation)
         cheapestRoute = cheapestResult.route
         cheapestPrice = cheapestResult.price
         routeAvailabilityStatus = cheapestRoute.isEmpty ? .routeDoesNotExist : .available
