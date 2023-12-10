@@ -24,3 +24,9 @@ struct RouteAbsentReasonView: View {
         .padding()
     }
 }
+
+extension RouteAbsentReasonView: Equatable {
+    static func == (lhs: RouteAbsentReasonView, rhs: RouteAbsentReasonView) -> Bool {
+        return lhs.reason == rhs.reason
+    }
+}

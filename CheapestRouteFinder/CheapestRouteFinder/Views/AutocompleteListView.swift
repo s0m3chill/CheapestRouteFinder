@@ -29,12 +29,21 @@ struct AutocompleteListView: View {
                             shouldObserveChanges = false
                         }
                     }
-                    .frame(minWidth: 0, 
+                    .frame(minWidth: 0,
                            maxWidth: .infinity,
                            minHeight: 0,
                            maxHeight: UIScreen.main.bounds.height * heightProportionToScreen)
                 }
             }
         }
+    }
+}
+
+extension AutocompleteListView: Equatable {
+    static func == (lhs: AutocompleteListView, rhs: AutocompleteListView) -> Bool {
+        return lhs.suggestions == rhs.suggestions &&
+        lhs.selectedLocation == rhs.selectedLocation &&
+        lhs.autocompleteObject === rhs.autocompleteObject &&
+        lhs.shouldObserveChanges == rhs.shouldObserveChanges
     }
 }

@@ -41,3 +41,13 @@ final class RouteStateManager {
         routeAvailabilityStatus = cheapestRoute.isEmpty ? .routeDoesNotExist : .available
     }
 }
+
+extension RouteStateManager: Equatable {
+    static func == (lhs: RouteStateManager, rhs: RouteStateManager) -> Bool {
+        return lhs.departureLocation == rhs.departureLocation &&
+        lhs.destinationLocation == rhs.destinationLocation &&
+        lhs.cheapestRoute == rhs.cheapestRoute &&
+        lhs.cheapestPrice == rhs.cheapestPrice &&
+        lhs.routeAvailabilityStatus == rhs.routeAvailabilityStatus
+    }
+}

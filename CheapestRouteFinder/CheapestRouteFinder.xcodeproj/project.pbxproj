@@ -19,6 +19,8 @@
 		47EA113F2B25E1C800CD8575 /* RouteInputViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA113D2B25E1C800CD8575 /* RouteInputViewModelState.swift */; };
 		47EA11412B25E45000CD8575 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11402B25E45000CD8575 /* ActionButton.swift */; };
 		47EA11422B25E45000CD8575 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11402B25E45000CD8575 /* ActionButton.swift */; };
+		47EA11442B25ED7900CD8575 /* CheapestRouteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */; };
+		47EA11452B25ED7900CD8575 /* CheapestRouteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */; };
 		47F961DF2B245CD300EB50AE /* CheapestRouteFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */; };
 		47F961E32B245CD400EB50AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E22B245CD400EB50AE /* Assets.xcassets */; };
 		47F961E62B245CD400EB50AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E52B245CD400EB50AE /* Preview Assets.xcassets */; };
@@ -84,6 +86,7 @@
 		47EA113A2B25D5FB00CD8575 /* RouteStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStateManager.swift; sourceTree = "<group>"; };
 		47EA113D2B25E1C800CD8575 /* RouteInputViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInputViewModelState.swift; sourceTree = "<group>"; };
 		47EA11402B25E45000CD8575 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteTextView.swift; sourceTree = "<group>"; };
 		47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheapestRouteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderApp.swift; sourceTree = "<group>"; };
 		47F961E22B245CD400EB50AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 				47F962312B245F1100EB50AE /* LocationInputView.swift */,
 				47F962342B245F2D00EB50AE /* RouteAbsentReasonView.swift */,
 				47EA11402B25E45000CD8575 /* ActionButton.swift */,
+				47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,6 +413,7 @@
 				47F962172B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */,
 				47EA113B2B25D5FB00CD8575 /* RouteStateManager.swift in Sources */,
 				47F9621E2B245E4E00EB50AE /* NetworkService.swift in Sources */,
+				47EA11442B25ED7900CD8575 /* CheapestRouteTextView.swift in Sources */,
 				47F962352B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */,
 				47F962292B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
 				47F962142B245DFB00EB50AE /* Constants.swift in Sources */,
@@ -435,6 +440,7 @@
 			files = (
 				47F9621B2B245E2100EB50AE /* RouteData.swift in Sources */,
 				47F962182B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */,
+				47EA11452B25ED7900CD8575 /* CheapestRouteTextView.swift in Sources */,
 				47F9621F2B245E4E00EB50AE /* NetworkService.swift in Sources */,
 				47F962432B24604300EB50AE /* NetworkServiceTests.swift in Sources */,
 				47F9623F2B24600700EB50AE /* CheapestRouteCalculatorTests.swift in Sources */,

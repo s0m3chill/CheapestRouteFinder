@@ -13,18 +13,29 @@ struct LocationInputView: View {
     @Binding var shouldObserveChanges: Bool
     let labelText: String
     let placeholderText: String
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             AutocompleteTextField(location: $location,
                                   autocompleteObject: autocompleteObject,
                                   shouldObserveChanges: $shouldObserveChanges,
                                   labelText: labelText,
-                                  placeholderText: placeholderText)
+                                  placeholderText: placeholderText).equatable()
             AutocompleteListView(suggestions: $autocompleteObject.suggestions,
                                  selectedLocation: $location,
                                  autocompleteObject: autocompleteObject,
-                                 shouldObserveChanges: $shouldObserveChanges)
+                                 shouldObserveChanges: $shouldObserveChanges).equatable()
         }
     }
+}
+
+extension LocationInputView: Equatable {
+    static func == (lhs: LocationInputView, rhs: LocationInputView) -> Bool {
+        return lhs.location == rhs.location &&
+        lhs.autocompleteObject === rhs.autocompleteObject &&
+        lhs.shouldObserveChanges == rhs.shouldObserveChanges &&
+        lhs.labelText == rhs.labelText &&
+        lhs.placeholderText == rhs.placeholderText
+    }
+    
 }

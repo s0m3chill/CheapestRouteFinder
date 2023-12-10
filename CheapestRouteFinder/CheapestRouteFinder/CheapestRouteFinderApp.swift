@@ -24,7 +24,7 @@ final class AppCoordinator {
         let viewModel = RouteInputViewModel(repository: routesRepository,
                                             departureAutocomplete: AutocompleteObject(repository: routesRepository),
                                             destinationAutocomplete: AutocompleteObject(repository: routesRepository))
-        let routesView = RouteInputView(viewModel: viewModel)
+        let routesView = RouteInputView(viewModel: viewModel).equatable()
         return routesView
     }
 }

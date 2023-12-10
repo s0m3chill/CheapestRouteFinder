@@ -32,3 +32,13 @@ struct AutocompleteTextField: View {
         .padding()
     }
 }
+
+extension AutocompleteTextField: Equatable {
+    static func == (lhs: AutocompleteTextField, rhs: AutocompleteTextField) -> Bool {
+        return lhs.location == rhs.location &&
+        lhs.autocompleteObject === rhs.autocompleteObject &&
+        lhs.shouldObserveChanges == rhs.shouldObserveChanges &&
+        lhs.labelText == rhs.labelText &&
+        lhs.placeholderText == rhs.placeholderText
+    }
+}

@@ -14,7 +14,7 @@ struct CheapestRouteModalView: View {
     var body: some View {
         VStack {
             if viewModel.routeAvailabilityStatus.isAvailable {
-                CheapestRouteTextView(cheapestRoute: viewModel.cheapestRoute)
+                CheapestRouteTextView(cheapestRoute: viewModel.cheapestRoute).equatable()
                 CheapestRouteMapView(cheapestRoute: viewModel.cheapestRoute)
                     .frame(height: UIScreen.main.bounds.height * LayoutConstants.mapToScreenHeightProportion.rawValue)
             } else {
@@ -36,19 +36,11 @@ struct CheapestRouteModalView: View {
     }
 }
 
-struct CheapestRouteTextView: View {
-    var cheapestRoute: [Connection]
-    
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                ForEach(cheapestRoute, id: \.self) { connection in
-                    Text(StringsProvider().string(forKey: .fromDepartureToDestination, connection.from, connection.to))
-                        .font(.body)
-                }
-            }
-        }
-        .frame(height: UIScreen.main.bounds.height * LayoutConstants.cheapestRouteTableHeightToScreenProportion.rawValue)
-        .padding()
+extension CheapestRouteModalView: Equatable {
+    static func == (lhs: CheapestRouteModalView, rhs: CheapestRouteModalView) -> Bool {
+        lhs.viewModel === rhs.viewModel &&
+        lhs.isShowingModal == rhs.isShowingModal
     }
 }
+
+

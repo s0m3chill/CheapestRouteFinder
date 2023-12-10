@@ -59,3 +59,10 @@ final class RouteInputViewModel: ObservableObject {
         routeStateManager.calculateCheapestRoute()
     }
 }
+
+extension RouteInputViewModel: Equatable {
+    static func == (lhs: RouteInputViewModel, rhs: RouteInputViewModel) -> Bool {
+        return lhs.routeViewModelState == rhs.routeViewModelState &&
+        lhs.routeStateManager == rhs.routeStateManager
+    }
+}

@@ -26,3 +26,9 @@ struct ActionButton: View {
         .padding(.vertical)
     }
 }
+
+extension ActionButton: Equatable {
+    static func == (lhs: ActionButton, rhs: ActionButton) -> Bool {
+        return lhs.isShowingModal == rhs.isShowingModal
+    }
+}

@@ -35,17 +35,17 @@ struct RouteInputView: View {
                                       autocompleteObject: $viewModel.departureAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDepartureField,
                                       labelText: StringsProvider().string(forKey: .from),
-                                      placeholderText: StringsProvider().string(forKey: .typeDeparture))
+                                      placeholderText: StringsProvider().string(forKey: .typeDeparture)).equatable()
                     LocationInputView(location: $viewModel.routeStateManager.destinationLocation,
                                       autocompleteObject: $viewModel.destinationAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDestinationField,
                                       labelText: StringsProvider().string(forKey: .to),
-                                      placeholderText: StringsProvider().string(forKey: .typeDestination))
+                                      placeholderText: StringsProvider().string(forKey: .typeDestination)).equatable()
                     ActionButton(isShowingModal: $isShowingModal) {
                         hideKeyboardOnButtonTap()
                         viewModel.findCheapestRoute()
                         isShowingModal = true
-                    }
+                    }.equatable()
                 }
             }
             .padding()
@@ -54,12 +54,18 @@ struct RouteInputView: View {
             })
         }
         .sheet(isPresented: $isShowingModal) {
-            CheapestRouteModalView(viewModel: viewModel, isShowingModal: $isShowingModal)
+            CheapestRouteModalView(viewModel: viewModel, isShowingModal: $isShowingModal).equatable()
         }
     }
     
     // MARK: - Private
     private func hideKeyboardOnButtonTap() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
+extension RouteInputView: Equatable {
+    static func == (lhs: RouteInputView, rhs: RouteInputView) -> Bool {
+        return lhs.viewModel == rhs.viewModel
     }
 }
