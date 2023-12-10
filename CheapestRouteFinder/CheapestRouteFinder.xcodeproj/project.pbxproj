@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47F961DF2B245CD300EB50AE /* CheapestRouteFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */; };
+		47F961E32B245CD400EB50AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E22B245CD400EB50AE /* Assets.xcassets */; };
+		47F961E62B245CD400EB50AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F961E52B245CD400EB50AE /* Preview Assets.xcassets */; };
+		47F961FA2B245CD400EB50AE /* CheapestRouteFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961F92B245CD400EB50AE /* CheapestRouteFinderUITests.swift */; };
+		47F961FC2B245CD400EB50AE /* CheapestRouteFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961FB2B245CD400EB50AE /* CheapestRouteFinderUITestsLaunchTests.swift */; };
+		47F9620A2B245D9800EB50AE /* AutocompleteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962092B245D9800EB50AE /* AutocompleteObject.swift */; };
+		47F9620B2B245D9800EB50AE /* AutocompleteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962092B245D9800EB50AE /* AutocompleteObject.swift */; };
+		47F9620D2B245DBF00EB50AE /* CheapestRouteCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9620C2B245DBF00EB50AE /* CheapestRouteCalculator.swift */; };
+		47F9620E2B245DBF00EB50AE /* CheapestRouteCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9620C2B245DBF00EB50AE /* CheapestRouteCalculator.swift */; };
+		47F962102B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */; };
+		47F962112B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */; };
+		47F962142B245DFB00EB50AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962132B245DFB00EB50AE /* Constants.swift */; };
+		47F962152B245DFB00EB50AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962132B245DFB00EB50AE /* Constants.swift */; };
+		47F962172B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962162B245E1200EB50AE /* RouteAvailabilityStatus.swift */; };
+		47F962182B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962162B245E1200EB50AE /* RouteAvailabilityStatus.swift */; };
+		47F9621A2B245E2100EB50AE /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962192B245E2100EB50AE /* RouteData.swift */; };
+		47F9621B2B245E2100EB50AE /* RouteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962192B245E2100EB50AE /* RouteData.swift */; };
+		47F9621E2B245E4E00EB50AE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9621D2B245E4E00EB50AE /* NetworkService.swift */; };
+		47F9621F2B245E4E00EB50AE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9621D2B245E4E00EB50AE /* NetworkService.swift */; };
+		47F962222B245E7800EB50AE /* RoutesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962212B245E7800EB50AE /* RoutesRepository.swift */; };
+		47F962232B245E7800EB50AE /* RoutesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962212B245E7800EB50AE /* RoutesRepository.swift */; };
+		47F962262B245EAB00EB50AE /* AutocompleteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962252B245EAB00EB50AE /* AutocompleteListView.swift */; };
+		47F962272B245EAB00EB50AE /* AutocompleteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962252B245EAB00EB50AE /* AutocompleteListView.swift */; };
+		47F962292B245EC200EB50AE /* AutocompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962282B245EC200EB50AE /* AutocompleteTextField.swift */; };
+		47F9622A2B245EC200EB50AE /* AutocompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962282B245EC200EB50AE /* AutocompleteTextField.swift */; };
+		47F9622C2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9622B2B245EDE00EB50AE /* CheapestRouteMapView.swift */; };
+		47F9622D2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9622B2B245EDE00EB50AE /* CheapestRouteMapView.swift */; };
+		47F9622F2B245EF900EB50AE /* CheapestRouteModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9622E2B245EF900EB50AE /* CheapestRouteModalView.swift */; };
+		47F962302B245EF900EB50AE /* CheapestRouteModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9622E2B245EF900EB50AE /* CheapestRouteModalView.swift */; };
+		47F962322B245F1100EB50AE /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962312B245F1100EB50AE /* LocationInputView.swift */; };
+		47F962332B245F1100EB50AE /* LocationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962312B245F1100EB50AE /* LocationInputView.swift */; };
+		47F962352B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962342B245F2D00EB50AE /* RouteAbsentReasonView.swift */; };
+		47F962362B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962342B245F2D00EB50AE /* RouteAbsentReasonView.swift */; };
+		47F962392B245F5700EB50AE /* RouteInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962382B245F5700EB50AE /* RouteInputViewModel.swift */; };
+		47F9623A2B245F5700EB50AE /* RouteInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962382B245F5700EB50AE /* RouteInputViewModel.swift */; };
+		47F9623C2B245F7300EB50AE /* RouteInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9623B2B245F7300EB50AE /* RouteInputView.swift */; };
+		47F9623D2B245F7300EB50AE /* RouteInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9623B2B245F7300EB50AE /* RouteInputView.swift */; };
+		47F9623F2B24600700EB50AE /* CheapestRouteCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F9623E2B24600700EB50AE /* CheapestRouteCalculatorTests.swift */; };
+		47F962412B24602300EB50AE /* RoutesInputViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962402B24602300EB50AE /* RoutesInputViewModelTests.swift */; };
+		47F962432B24604300EB50AE /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962422B24604300EB50AE /* NetworkServiceTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47F961EC2B245CD400EB50AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47F961D32B245CD300EB50AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47F961DA2B245CD300EB50AE;
+			remoteInfo = CheapestRouteFinder;
+		};
+		47F961F62B245CD400EB50AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47F961D32B245CD300EB50AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47F961DA2B245CD300EB50AE;
+			remoteInfo = CheapestRouteFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheapestRouteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderApp.swift; sourceTree = "<group>"; };
+		47F961E22B245CD400EB50AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47F961E52B245CD400EB50AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		47F961EB2B245CD400EB50AE /* CheapestRouteFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheapestRouteFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47F961F52B245CD400EB50AE /* CheapestRouteFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheapestRouteFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47F961F92B245CD400EB50AE /* CheapestRouteFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderUITests.swift; sourceTree = "<group>"; };
+		47F961FB2B245CD400EB50AE /* CheapestRouteFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		47F962092B245D9800EB50AE /* AutocompleteObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteObject.swift; sourceTree = "<group>"; };
+		47F9620C2B245DBF00EB50AE /* CheapestRouteCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteCalculator.swift; sourceTree = "<group>"; };
+		47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAvailabilityChecker.swift; sourceTree = "<group>"; };
+		47F962132B245DFB00EB50AE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		47F962162B245E1200EB50AE /* RouteAvailabilityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAvailabilityStatus.swift; sourceTree = "<group>"; };
+		47F962192B245E2100EB50AE /* RouteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteData.swift; sourceTree = "<group>"; };
+		47F9621D2B245E4E00EB50AE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		47F962212B245E7800EB50AE /* RoutesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesRepository.swift; sourceTree = "<group>"; };
+		47F962252B245EAB00EB50AE /* AutocompleteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteListView.swift; sourceTree = "<group>"; };
+		47F962282B245EC200EB50AE /* AutocompleteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteTextField.swift; sourceTree = "<group>"; };
+		47F9622B2B245EDE00EB50AE /* CheapestRouteMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteMapView.swift; sourceTree = "<group>"; };
+		47F9622E2B245EF900EB50AE /* CheapestRouteModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteModalView.swift; sourceTree = "<group>"; };
+		47F962312B245F1100EB50AE /* LocationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInputView.swift; sourceTree = "<group>"; };
+		47F962342B245F2D00EB50AE /* RouteAbsentReasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteAbsentReasonView.swift; sourceTree = "<group>"; };
+		47F962382B245F5700EB50AE /* RouteInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInputViewModel.swift; sourceTree = "<group>"; };
+		47F9623B2B245F7300EB50AE /* RouteInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInputView.swift; sourceTree = "<group>"; };
+		47F9623E2B24600700EB50AE /* CheapestRouteCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteCalculatorTests.swift; sourceTree = "<group>"; };
+		47F962402B24602300EB50AE /* RoutesInputViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesInputViewModelTests.swift; sourceTree = "<group>"; };
+		47F962422B24604300EB50AE /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47F961D82B245CD300EB50AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F961E82B245CD400EB50AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F961F22B245CD400EB50AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47F961D22B245CD300EB50AE = {
+			isa = PBXGroup;
+			children = (
+				47F961DD2B245CD300EB50AE /* CheapestRouteFinder */,
+				47F961EE2B245CD400EB50AE /* CheapestRouteFinderTests */,
+				47F961F82B245CD400EB50AE /* CheapestRouteFinderUITests */,
+				47F961DC2B245CD300EB50AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47F961DC2B245CD300EB50AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */,
+				47F961EB2B245CD400EB50AE /* CheapestRouteFinderTests.xctest */,
+				47F961F52B245CD400EB50AE /* CheapestRouteFinderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47F961DD2B245CD300EB50AE /* CheapestRouteFinder */ = {
+			isa = PBXGroup;
+			children = (
+				47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */,
+				47F962122B245DF000EB50AE /* Model */,
+				47F962372B245F3F00EB50AE /* RouteModule */,
+				47F962242B245E9F00EB50AE /* Views */,
+				47F962202B245E6C00EB50AE /* Repository */,
+				47F9621C2B245E4100EB50AE /* Network */,
+				47F962082B245D8500EB50AE /* Utils */,
+				47F961E22B245CD400EB50AE /* Assets.xcassets */,
+				47F961E42B245CD400EB50AE /* Preview Content */,
+			);
+			path = CheapestRouteFinder;
+			sourceTree = "<group>";
+		};
+		47F961E42B245CD400EB50AE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				47F961E52B245CD400EB50AE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47F961EE2B245CD400EB50AE /* CheapestRouteFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				47F9623E2B24600700EB50AE /* CheapestRouteCalculatorTests.swift */,
+				47F962402B24602300EB50AE /* RoutesInputViewModelTests.swift */,
+				47F962422B24604300EB50AE /* NetworkServiceTests.swift */,
+			);
+			path = CheapestRouteFinderTests;
+			sourceTree = "<group>";
+		};
+		47F961F82B245CD400EB50AE /* CheapestRouteFinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				47F961F92B245CD400EB50AE /* CheapestRouteFinderUITests.swift */,
+				47F961FB2B245CD400EB50AE /* CheapestRouteFinderUITestsLaunchTests.swift */,
+			);
+			path = CheapestRouteFinderUITests;
+			sourceTree = "<group>";
+		};
+		47F962082B245D8500EB50AE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				47F962092B245D9800EB50AE /* AutocompleteObject.swift */,
+				47F9620C2B245DBF00EB50AE /* CheapestRouteCalculator.swift */,
+				47F9620F2B245DDE00EB50AE /* RouteAvailabilityChecker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		47F962122B245DF000EB50AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47F962132B245DFB00EB50AE /* Constants.swift */,
+				47F962162B245E1200EB50AE /* RouteAvailabilityStatus.swift */,
+				47F962192B245E2100EB50AE /* RouteData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		47F9621C2B245E4100EB50AE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				47F9621D2B245E4E00EB50AE /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		47F962202B245E6C00EB50AE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				47F962212B245E7800EB50AE /* RoutesRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		47F962242B245E9F00EB50AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47F962252B245EAB00EB50AE /* AutocompleteListView.swift */,
+				47F962282B245EC200EB50AE /* AutocompleteTextField.swift */,
+				47F9622B2B245EDE00EB50AE /* CheapestRouteMapView.swift */,
+				47F9622E2B245EF900EB50AE /* CheapestRouteModalView.swift */,
+				47F962312B245F1100EB50AE /* LocationInputView.swift */,
+				47F962342B245F2D00EB50AE /* RouteAbsentReasonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47F962372B245F3F00EB50AE /* RouteModule */ = {
+			isa = PBXGroup;
+			children = (
+				47F962382B245F5700EB50AE /* RouteInputViewModel.swift */,
+				47F9623B2B245F7300EB50AE /* RouteInputView.swift */,
+			);
+			path = RouteModule;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47F961DA2B245CD300EB50AE /* CheapestRouteFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47F961FF2B245CD400EB50AE /* Build configuration list for PBXNativeTarget "CheapestRouteFinder" */;
+			buildPhases = (
+				47F961D72B245CD300EB50AE /* Sources */,
+				47F961D82B245CD300EB50AE /* Frameworks */,
+				47F961D92B245CD300EB50AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CheapestRouteFinder;
+			productName = CheapestRouteFinder;
+			productReference = 47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47F961EA2B245CD400EB50AE /* CheapestRouteFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47F962022B245CD400EB50AE /* Build configuration list for PBXNativeTarget "CheapestRouteFinderTests" */;
+			buildPhases = (
+				47F961E72B245CD400EB50AE /* Sources */,
+				47F961E82B245CD400EB50AE /* Frameworks */,
+				47F961E92B245CD400EB50AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47F961ED2B245CD400EB50AE /* PBXTargetDependency */,
+			);
+			name = CheapestRouteFinderTests;
+			productName = CheapestRouteFinderTests;
+			productReference = 47F961EB2B245CD400EB50AE /* CheapestRouteFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		47F961F42B245CD400EB50AE /* CheapestRouteFinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47F962052B245CD400EB50AE /* Build configuration list for PBXNativeTarget "CheapestRouteFinderUITests" */;
+			buildPhases = (
+				47F961F12B245CD400EB50AE /* Sources */,
+				47F961F22B245CD400EB50AE /* Frameworks */,
+				47F961F32B245CD400EB50AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47F961F72B245CD400EB50AE /* PBXTargetDependency */,
+			);
+			name = CheapestRouteFinderUITests;
+			productName = CheapestRouteFinderUITests;
+			productReference = 47F961F52B245CD400EB50AE /* CheapestRouteFinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47F961D32B245CD300EB50AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					47F961DA2B245CD300EB50AE = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					47F961EA2B245CD400EB50AE = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 47F961DA2B245CD300EB50AE;
+					};
+					47F961F42B245CD400EB50AE = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 47F961DA2B245CD300EB50AE;
+					};
+				};
+			};
+			buildConfigurationList = 47F961D62B245CD300EB50AE /* Build configuration list for PBXProject "CheapestRouteFinder" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47F961D22B245CD300EB50AE;
+			productRefGroup = 47F961DC2B245CD300EB50AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47F961DA2B245CD300EB50AE /* CheapestRouteFinder */,
+				47F961EA2B245CD400EB50AE /* CheapestRouteFinderTests */,
+				47F961F42B245CD400EB50AE /* CheapestRouteFinderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47F961D92B245CD300EB50AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F961E62B245CD400EB50AE /* Preview Assets.xcassets in Resources */,
+				47F961E32B245CD400EB50AE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F961E92B245CD400EB50AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F961F32B245CD400EB50AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47F961D72B245CD300EB50AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F9621A2B245E2100EB50AE /* RouteData.swift in Sources */,
+				47F962172B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */,
+				47F9621E2B245E4E00EB50AE /* NetworkService.swift in Sources */,
+				47F962352B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */,
+				47F962292B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
+				47F962142B245DFB00EB50AE /* Constants.swift in Sources */,
+				47F962102B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */,
+				47F962322B245F1100EB50AE /* LocationInputView.swift in Sources */,
+				47F9622C2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */,
+				47F9620D2B245DBF00EB50AE /* CheapestRouteCalculator.swift in Sources */,
+				47F9623C2B245F7300EB50AE /* RouteInputView.swift in Sources */,
+				47F962262B245EAB00EB50AE /* AutocompleteListView.swift in Sources */,
+				47F9622F2B245EF900EB50AE /* CheapestRouteModalView.swift in Sources */,
+				47F9620A2B245D9800EB50AE /* AutocompleteObject.swift in Sources */,
+				47F962222B245E7800EB50AE /* RoutesRepository.swift in Sources */,
+				47F962392B245F5700EB50AE /* RouteInputViewModel.swift in Sources */,
+				47F961DF2B245CD300EB50AE /* CheapestRouteFinderApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F961E72B245CD400EB50AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F9621B2B245E2100EB50AE /* RouteData.swift in Sources */,
+				47F962182B245E1200EB50AE /* RouteAvailabilityStatus.swift in Sources */,
+				47F9621F2B245E4E00EB50AE /* NetworkService.swift in Sources */,
+				47F962432B24604300EB50AE /* NetworkServiceTests.swift in Sources */,
+				47F9623F2B24600700EB50AE /* CheapestRouteCalculatorTests.swift in Sources */,
+				47F962362B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */,
+				47F9622A2B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
+				47F962412B24602300EB50AE /* RoutesInputViewModelTests.swift in Sources */,
+				47F962152B245DFB00EB50AE /* Constants.swift in Sources */,
+				47F962112B245DDE00EB50AE /* RouteAvailabilityChecker.swift in Sources */,
+				47F962332B245F1100EB50AE /* LocationInputView.swift in Sources */,
+				47F9622D2B245EDE00EB50AE /* CheapestRouteMapView.swift in Sources */,
+				47F9620E2B245DBF00EB50AE /* CheapestRouteCalculator.swift in Sources */,
+				47F9623D2B245F7300EB50AE /* RouteInputView.swift in Sources */,
+				47F962272B245EAB00EB50AE /* AutocompleteListView.swift in Sources */,
+				47F962302B245EF900EB50AE /* CheapestRouteModalView.swift in Sources */,
+				47F9620B2B245D9800EB50AE /* AutocompleteObject.swift in Sources */,
+				47F962232B245E7800EB50AE /* RoutesRepository.swift in Sources */,
+				47F9623A2B245F5700EB50AE /* RouteInputViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47F961F12B245CD400EB50AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F961FA2B245CD400EB50AE /* CheapestRouteFinderUITests.swift in Sources */,
+				47F961FC2B245CD400EB50AE /* CheapestRouteFinderUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47F961ED2B245CD400EB50AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47F961DA2B245CD300EB50AE /* CheapestRouteFinder */;
+			targetProxy = 47F961EC2B245CD400EB50AE /* PBXContainerItemProxy */;
+		};
+		47F961F72B245CD400EB50AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47F961DA2B245CD300EB50AE /* CheapestRouteFinder */;
+			targetProxy = 47F961F62B245CD400EB50AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		47F961FD2B245CD400EB50AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		47F961FE2B245CD400EB50AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47F962002B245CD400EB50AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CheapestRouteFinder/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dariy..CheapestRouteFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47F962012B245CD400EB50AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CheapestRouteFinder/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dariy..CheapestRouteFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		47F962032B245CD400EB50AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dariy..CheapestRouteFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheapestRouteFinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CheapestRouteFinder";
+			};
+			name = Debug;
+		};
+		47F962042B245CD400EB50AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dariy..CheapestRouteFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CheapestRouteFinder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CheapestRouteFinder";
+			};
+			name = Release;
+		};
+		47F962062B245CD400EB50AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dariy..CheapestRouteFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CheapestRouteFinder;
+			};
+			name = Debug;
+		};
+		47F962072B245CD400EB50AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dariy..CheapestRouteFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CheapestRouteFinder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47F961D62B245CD300EB50AE /* Build configuration list for PBXProject "CheapestRouteFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47F961FD2B245CD400EB50AE /* Debug */,
+				47F961FE2B245CD400EB50AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47F961FF2B245CD400EB50AE /* Build configuration list for PBXNativeTarget "CheapestRouteFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47F962002B245CD400EB50AE /* Debug */,
+				47F962012B245CD400EB50AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47F962022B245CD400EB50AE /* Build configuration list for PBXNativeTarget "CheapestRouteFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47F962032B245CD400EB50AE /* Debug */,
+				47F962042B245CD400EB50AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47F962052B245CD400EB50AE /* Build configuration list for PBXNativeTarget "CheapestRouteFinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47F962062B245CD400EB50AE /* Debug */,
+				47F962072B245CD400EB50AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47F961D32B245CD300EB50AE /* Project object */;
+}
