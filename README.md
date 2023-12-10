@@ -24,6 +24,8 @@ Anticipated and implemented L10N logic
 
 General UI/UX. Especially autocomplete list view
 
-Need to add support for different JSON models. As for now only supports JSON from the URL from test assignment.
+Need to add support for different JSON models. As for now only supports JSON from the URL from test assignment. <br/>
+
+Usage of single 'AutocompleteObject' instead of 2 for different text fields
 
 Performance improvement of offloading cheapest route calculation from the main thread (not needed for small number of Connections like in the test url)
