@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationInputView: View {
-    @Binding var location: String
+    @Binding var userInput: String
     @Binding var autocompleteObject: AutocompleteObject
     @State var textFieldShouldObserveChanges: Bool = true
     let labelText: String
@@ -16,22 +16,22 @@ struct LocationInputView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            AutocompleteTextField(location: $location,
+            AutocompleteTextField(userInput: $userInput,
                                   autocompleteObject: autocompleteObject,
                                   textFieldShouldObserveChanges: $textFieldShouldObserveChanges,
                                   labelText: labelText,
                                   placeholderText: placeholderText).equatable()
             AutocompleteListView(suggestions: $autocompleteObject.suggestions,
-                                 selectedLocation: $location,
+                                 selectedSuggestion: $userInput,
                                  autocompleteObject: autocompleteObject,
-                                 shouldObserveChanges: $textFieldShouldObserveChanges).equatable()
+                                 isSuggestionTapped: $textFieldShouldObserveChanges).equatable()
         }
     }
 }
 
 extension LocationInputView: Equatable {
     static func == (lhs: LocationInputView, rhs: LocationInputView) -> Bool {
-        return lhs.location == rhs.location &&
+        return lhs.userInput == rhs.userInput &&
         lhs.autocompleteObject === rhs.autocompleteObject &&
         lhs.textFieldShouldObserveChanges == rhs.textFieldShouldObserveChanges &&
         lhs.labelText == rhs.labelText &&

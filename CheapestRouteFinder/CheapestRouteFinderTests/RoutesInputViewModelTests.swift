@@ -22,9 +22,7 @@ final class RoutesInputViewModelTests: XCTestCase {
         
         let repository = RoutesRepositoryMock()
         self.repository = repository
-        sut = RouteInputViewModel(repository: repository,
-                                  departureAutocomplete: AutocompleteObject(repository: repository),
-                                  destinationAutocomplete: AutocompleteObject(repository: repository))
+        sut = RouteInputViewModel(repository: repository)
     }
     
     override func tearDown() {

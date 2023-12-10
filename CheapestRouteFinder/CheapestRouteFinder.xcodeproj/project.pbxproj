@@ -21,8 +21,6 @@
 		47EA11422B25E45000CD8575 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11402B25E45000CD8575 /* ActionButton.swift */; };
 		47EA11442B25ED7900CD8575 /* CheapestRouteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */; };
 		47EA11452B25ED7900CD8575 /* CheapestRouteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */; };
-		47EA11472B2628CA00CD8575 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11462B2628CA00CD8575 /* View+Extensions.swift */; };
-		47EA11482B2628CA00CD8575 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11462B2628CA00CD8575 /* View+Extensions.swift */; };
 		47EA114A2B2630D000CD8575 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11492B2630D000CD8575 /* Color+Extensions.swift */; };
 		47EA114B2B2630D000CD8575 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA11492B2630D000CD8575 /* Color+Extensions.swift */; };
 		47F961DF2B245CD300EB50AE /* CheapestRouteFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */; };
@@ -91,7 +89,6 @@
 		47EA113D2B25E1C800CD8575 /* RouteInputViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInputViewModelState.swift; sourceTree = "<group>"; };
 		47EA11402B25E45000CD8575 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteTextView.swift; sourceTree = "<group>"; };
-		47EA11462B2628CA00CD8575 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		47EA11492B2630D000CD8575 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		47F961DB2B245CD300EB50AE /* CheapestRouteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheapestRouteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F961DE2B245CD300EB50AE /* CheapestRouteFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapestRouteFinderApp.swift; sourceTree = "<group>"; };
@@ -229,7 +226,6 @@
 			children = (
 				47F962092B245D9800EB50AE /* AutocompleteObject.swift */,
 				47EA11332B25C85600CD8575 /* StringsProvider.swift */,
-				47EA11462B2628CA00CD8575 /* View+Extensions.swift */,
 				47EA11492B2630D000CD8575 /* Color+Extensions.swift */,
 			);
 			path = Utils;
@@ -425,7 +421,6 @@
 				47F962352B245F2D00EB50AE /* RouteAbsentReasonView.swift in Sources */,
 				47F962292B245EC200EB50AE /* AutocompleteTextField.swift in Sources */,
 				47F962142B245DFB00EB50AE /* Constants.swift in Sources */,
-				47EA11472B2628CA00CD8575 /* View+Extensions.swift in Sources */,
 				47EA11342B25C85600CD8575 /* StringsProvider.swift in Sources */,
 				47EA11412B25E45000CD8575 /* ActionButton.swift in Sources */,
 				47EA114A2B2630D000CD8575 /* Color+Extensions.swift in Sources */,
@@ -471,7 +466,6 @@
 				47F962302B245EF900EB50AE /* CheapestRouteModalView.swift in Sources */,
 				47EA112C2B25BEF900CD8575 /* Constants.swift in Sources */,
 				47F9620B2B245D9800EB50AE /* AutocompleteObject.swift in Sources */,
-				47EA11482B2628CA00CD8575 /* View+Extensions.swift in Sources */,
 				47F962232B245E7800EB50AE /* RoutesRepository.swift in Sources */,
 				47EA112B2B25BE3900CD8575 /* ConnectionsDataStub.swift in Sources */,
 				47F9623A2B245F5700EB50AE /* RouteInputViewModel.swift in Sources */,

@@ -22,8 +22,14 @@ enum LayoutConstants: CGFloat {
     case autocompleteHeightToScreenProportion = 0.2
     case cheapestRouteTableHeightToScreenProportion = 0.15
     case mapToScreenHeightProportion = 0.3
-    case borderWidth = 1
+    case lineWidth = 3
     case cornerRadius = 10
+}
+
+enum MapConstants: CGFloat {
+    case degreesCenter = 0
+    case degreesDelta = 20
+    case zoomDistance = 5000000
 }
 
 enum L10N: String {

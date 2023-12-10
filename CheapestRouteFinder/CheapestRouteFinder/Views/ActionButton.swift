@@ -21,7 +21,7 @@ struct ActionButton: View {
             .frame(maxWidth: .infinity)
             .background(Color.themeColor)
             .foregroundColor(.white)
-            .addBorder(Color.white, width: LayoutConstants.borderWidth.rawValue, cornerRadius: LayoutConstants.cornerRadius.rawValue)
+            .clipShape(Capsule())
             Spacer()
         }
         .padding(.vertical)

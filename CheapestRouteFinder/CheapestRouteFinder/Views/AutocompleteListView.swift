@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AutocompleteListView: View {
     @Binding var suggestions: Set<String>
-    @Binding var selectedLocation: String
+    @Binding var selectedSuggestion: String
     @ObservedObject var autocompleteObject: AutocompleteObject
-    @Binding var shouldObserveChanges: Bool
+    @Binding var isSuggestionTapped: Bool
     @State var showList = false
     private let heightProportionToScreen: CGFloat = LayoutConstants.autocompleteHeightToScreenProportion.rawValue
     
@@ -25,9 +25,9 @@ struct AutocompleteListView: View {
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .onTapGesture {
-                            selectedLocation = suggestion
+                            selectedSuggestion = suggestion
                             autocompleteObject.reset()
-                            shouldObserveChanges = false
+                            isSuggestionTapped = false
                             withAnimation {
                                 showList = false
                             }
@@ -59,8 +59,8 @@ struct AutocompleteListView: View {
 extension AutocompleteListView: Equatable {
     static func == (lhs: AutocompleteListView, rhs: AutocompleteListView) -> Bool {
         return lhs.suggestions == rhs.suggestions &&
-        lhs.selectedLocation == rhs.selectedLocation &&
+        lhs.selectedSuggestion == rhs.selectedSuggestion &&
         lhs.autocompleteObject === rhs.autocompleteObject &&
-        lhs.shouldObserveChanges == rhs.shouldObserveChanges
+        lhs.isSuggestionTapped == rhs.isSuggestionTapped
     }
 }

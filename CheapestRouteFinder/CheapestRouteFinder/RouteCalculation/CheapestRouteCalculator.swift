@@ -30,7 +30,7 @@ struct CheapestRouteCalculator {
                                         routes: &routes)
         
         let cheapestRoute = routes.min { $0.map { $0.price }.reduce(0, +) < $1.map { $0.price }.reduce(0, +) } ?? []
-        let cheapestPrice = calculatePrice(for: cheapestRoute)
+        let cheapestPrice = price(forRoute: cheapestRoute)
         
         return (cheapestRoute, cheapestPrice)
     }
@@ -62,7 +62,7 @@ struct CheapestRouteCalculator {
         visited.remove(current)
     }
     
-    private func calculatePrice(for connections: [Connection]) -> Int {
+    private func price(forRoute connections: [Connection]) -> Int {
         return connections.reduce(0) { $0 + $1.price }
     }
     

@@ -29,7 +29,7 @@ final class MapViewCoordinator: NSObject, MKMapViewDelegate {
         if let polyline = overlay as? MKPolyline {
             let renderer = MKPolylineRenderer(overlay: polyline)
             renderer.strokeColor = UIColor(Color.themeColor)
-            renderer.lineWidth = 3
+            renderer.lineWidth = LayoutConstants.lineWidth.rawValue
             renderer.lineJoin = .round
             renderer.lineCap = .round
             return renderer
@@ -42,16 +42,18 @@ struct CheapestRouteMapView: UIViewRepresentable {
     
     // MARK: - Properties
     let cheapestRoute: [Connection]
+    private let degreesCenter: CLLocationDegrees = MapConstants.degreesCenter.rawValue
+    private let degreesDelta: CLLocationDegrees = MapConstants.degreesDelta.rawValue
+    private let zoomDistance: CLLocationDistance = MapConstants.zoomDistance.rawValue
     
     // MARK: - UIViewRepresentable
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
-        let delta: CLLocationDegrees = 20
         mapView.showsUserLocation = false
         mapView.delegate = context.coordinator
         mapView.region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
-            span: MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
+            center: CLLocationCoordinate2D(latitude: degreesCenter, longitude: degreesCenter),
+            span: MKCoordinateSpan(latitudeDelta: degreesDelta, longitudeDelta: degreesDelta)
         )
         addAnnotationsWithLines(for: mapView)
         return mapView
@@ -94,7 +96,6 @@ struct CheapestRouteMapView: UIViewRepresentable {
     }
     
     private func setInitialVisible(coordinate: Connection.Location, for map: MKMapView) {
-        let zoomDistance: CLLocationDistance = 5000000
         let region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: coordinate.lat, longitude: coordinate.long),
             latitudinalMeters: zoomDistance,

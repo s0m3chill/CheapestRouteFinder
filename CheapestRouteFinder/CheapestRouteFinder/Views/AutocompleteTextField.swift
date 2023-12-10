@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AutocompleteTextField: View {
-    @Binding var location: String
+    @Binding var userInput: String
     @ObservedObject var autocompleteObject: AutocompleteObject
     // workaround to prevent autocomplete re-trigger right after selecting city from list
     @Binding var textFieldShouldObserveChanges: Bool
@@ -20,10 +20,10 @@ struct AutocompleteTextField: View {
             HStack {
                 Text(labelText)
                     .frame(width: LayoutConstants.prefixTitleWidth.rawValue, alignment: .leading)
-                TextField(placeholderText, text: $location)
+                TextField(placeholderText, text: $userInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
-                    .onChange(of: location) { oldValue, newValue in
+                    .onChange(of: userInput) { oldValue, newValue in
                         if textFieldShouldObserveChanges {
                             autocompleteObject.autocomplete(newValue)
                         } else {
@@ -37,7 +37,7 @@ struct AutocompleteTextField: View {
 
 extension AutocompleteTextField: Equatable {
     static func == (lhs: AutocompleteTextField, rhs: AutocompleteTextField) -> Bool {
-        return lhs.location == rhs.location &&
+        return lhs.userInput == rhs.userInput &&
         lhs.autocompleteObject === rhs.autocompleteObject &&
         lhs.textFieldShouldObserveChanges == rhs.textFieldShouldObserveChanges &&
         lhs.labelText == rhs.labelText &&
