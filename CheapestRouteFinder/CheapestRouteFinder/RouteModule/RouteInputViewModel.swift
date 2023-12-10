@@ -11,7 +11,7 @@ import Combine
 final class RouteInputViewModel: ObservableObject {
     
     // MARK: - Properties
-    @Published var errorMessage: String?
+    @Published var routeViewModelState: RouteInputViewModelState
     @Published var routeStateManager: RouteStateManager
     @Published var departureAutocomplete: AutocompleteObject
     @Published var destinationAutocomplete: AutocompleteObject
@@ -35,6 +35,7 @@ final class RouteInputViewModel: ObservableObject {
     init(repository: RoutesRepositoryFetching,
          departureAutocomplete: AutocompleteObject,
          destinationAutocomplete: AutocompleteObject) {
+        self.routeViewModelState = .loading
         self.repository = repository
         self.departureAutocomplete = departureAutocomplete
         self.destinationAutocomplete = destinationAutocomplete
@@ -46,10 +47,10 @@ final class RouteInputViewModel: ObservableObject {
         repository.fetchConnections()
             .sink { [weak self] completion in
                 if case let .failure(error) = completion {
-                    self?.errorMessage = error.localizedDescription
+                    self?.routeViewModelState = .error(error.localizedDescription)
                 }
             } receiveValue: { [weak self] _ in
-                self?.errorMessage = nil
+                self?.routeViewModelState = .loaded
             }
             .store(in: &cancellables)
     }

@@ -23,11 +23,14 @@ struct RouteInputView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                if let error = viewModel.errorMessage {
-                    Text(error)
+                switch viewModel.routeViewModelState {
+                case .loading:
+                    ProgressView()
+                case .error(let errorMessage):
+                    Text(errorMessage)
                         .foregroundColor(.red)
                         .padding()
-                } else {
+                case .loaded:
                     LocationInputView(location: $viewModel.routeStateManager.departureLocation,
                                       autocompleteObject: $viewModel.departureAutocomplete,
                                       shouldObserveChanges: $shouldObserveChangesDepartureField,
@@ -38,20 +41,11 @@ struct RouteInputView: View {
                                       shouldObserveChanges: $shouldObserveChangesDestinationField,
                                       labelText: StringsProvider().string(forKey: .to),
                                       placeholderText: StringsProvider().string(forKey: .typeDestination))
-                    HStack {
-                        Spacer()
-                        Button(StringsProvider().string(forKey: .findCheapestRoute)) {
-                            hideKeyboardOnButtonTap()
-                            viewModel.findCheapestRoute()
-                            isShowingModal = true
-                        }
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        Spacer()
+                    ActionButton(isShowingModal: $isShowingModal) {
+                        hideKeyboardOnButtonTap()
+                        viewModel.findCheapestRoute()
+                        isShowingModal = true
                     }
-                    .padding(.vertical)
                 }
             }
             .padding()
