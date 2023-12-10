@@ -9,15 +9,14 @@ import SwiftUI
 
 struct RouteAbsentReasonView: View {
     let reason: String
-    private let stringsProvider = StringsProvider()
 
     var body: some View {
         VStack {
-            Text(stringsProvider.string(forKey: .routeIsAbsent))
+            Text(StringsProvider().string(forKey: .routeIsAbsent))
                 .foregroundColor(.red)
                 .font(.headline)
                 .padding()
-            Text(stringsProvider.string(forKey: .reason) + ": " + reason)
+            Text(StringsProvider().string(forKey: .reason) + ": " + reason)
                 .foregroundColor(.black)
                 .padding()
         }

@@ -32,6 +32,12 @@ enum MapConstants: CGFloat {
     case zoomDistance = 5000000
 }
 
+
+enum Opacity: CGFloat {
+    case opaque = 1
+    case transparent = 0
+}
+
 enum L10N: String {
     case from = "From"
     case to = "To"

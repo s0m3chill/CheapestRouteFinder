@@ -34,7 +34,7 @@ struct AutocompleteListView: View {
                         }
                     }
                     .frame(maxHeight: showList ? UIScreen.main.bounds.height * heightProportionToScreen : 0)
-                    .opacity(showList ? 1 : 0)
+                    .opacity(showList ? Opacity.opaque.rawValue : Opacity.transparent.rawValue)
                     .animation(.default, value: showList)
                     .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/, value: UUID())
                     .onAppear {

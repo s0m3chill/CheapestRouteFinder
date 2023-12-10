@@ -21,7 +21,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Total price of this route: %d$"
+            "value" : "Total cost of this route: %d$"
           }
         }
       }
