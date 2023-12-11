@@ -32,5 +32,5 @@ struct RouteAvailabilityChecker {
     private func areLocationsSame() -> Bool {
         return fromLocation == toLocation
     }
-        
+    
 }

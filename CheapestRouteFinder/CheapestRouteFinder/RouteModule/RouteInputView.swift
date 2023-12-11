@@ -32,17 +32,20 @@ struct RouteInputView: View {
                     LocationInputView(userInput: $viewModel.routeStateManager.departureLocation,
                                       autocompleteObject: $viewModel.departureAutocomplete,
                                       labelText: StringsProvider().string(forKey: .from),
-                                      placeholderText: StringsProvider().string(forKey: .typeDeparture)).equatable()
+                                      placeholderText: StringsProvider().string(forKey: .typeDeparture))
+                    .equatable()
                     Spacer().frame(height: LayoutConstants.spacerHeight.rawValue)
                     LocationInputView(userInput: $viewModel.routeStateManager.destinationLocation,
                                       autocompleteObject: $viewModel.destinationAutocomplete,
                                       labelText: StringsProvider().string(forKey: .to),
-                                      placeholderText: StringsProvider().string(forKey: .typeDestination)).equatable()
+                                      placeholderText: StringsProvider().string(forKey: .typeDestination))
+                    .equatable()
                     ActionButton(title: StringsProvider().string(forKey: .findCheapestRoute)) {
                         hideKeyboardOnButtonTap()
                         viewModel.findCheapestRoute()
                         isShowingModal = true
-                    }.equatable()
+                    }
+                    .equatable()
                 }
             }
             .padding()
@@ -51,7 +54,8 @@ struct RouteInputView: View {
             })
         }
         .sheet(isPresented: $isShowingModal) {
-            CheapestRouteModalView(viewModel: viewModel, isShowingModal: $isShowingModal).equatable()
+            CheapestRouteModalView(viewModel: viewModel, isShowingModal: $isShowingModal)
+                .equatable()
         }
     }
     

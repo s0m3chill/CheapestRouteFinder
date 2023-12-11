@@ -14,7 +14,8 @@ struct CheapestRouteModalView: View {
     var body: some View {
         VStack {
             if viewModel.routeAvailabilityStatus.isAvailable {
-                CheapestRouteTextView(cheapestRoute: viewModel.cheapestRoute).equatable()
+                CheapestRouteTextView(cheapestRoute: viewModel.cheapestRoute)
+                    .equatable()
                 CheapestRouteMapView(cheapestRoute: viewModel.cheapestRoute)
                     .frame(height: UIScreen.main.bounds.height * LayoutConstants.mapToScreenHeightProportion.rawValue)
                 Text(StringsProvider().string(forKey: .cheapestRoutePrice, viewModel.cheapestPrice))
@@ -22,14 +23,15 @@ struct CheapestRouteModalView: View {
                     .fontWeight(.bold)
                     .padding()
             } else {
-                RouteAbsentReasonView(reason: viewModel.routeAvailabilityStatus.description).equatable()
+                RouteAbsentReasonView(reason: viewModel.routeAvailabilityStatus.description)
+                    .equatable()
             }
             ActionButton(title: StringsProvider().string(forKey: .close)) {
                 isShowingModal = false
             }.equatable()
-            .padding()
-            .frame(maxWidth: .infinity)
-            .foregroundColor(.white)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .foregroundColor(.white)
         }
         .padding()
     }

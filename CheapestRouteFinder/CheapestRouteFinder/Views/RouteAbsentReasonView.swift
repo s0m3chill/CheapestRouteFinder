@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RouteAbsentReasonView: View {
     let reason: String
-
+    
     var body: some View {
         VStack {
             Text(StringsProvider().string(forKey: .routeIsAbsent))

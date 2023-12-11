@@ -20,11 +20,13 @@ struct LocationInputView: View {
                                   autocompleteObject: autocompleteObject,
                                   textFieldShouldObserveChanges: $textFieldShouldObserveChanges,
                                   labelText: labelText,
-                                  placeholderText: placeholderText).equatable()
+                                  placeholderText: placeholderText)
+            .equatable()
             AutocompleteListView(suggestions: $autocompleteObject.suggestions,
                                  selectedSuggestion: $userInput,
                                  autocompleteObject: autocompleteObject,
-                                 isSuggestionTapped: $textFieldShouldObserveChanges).equatable()
+                                 isSuggestionTapped: $textFieldShouldObserveChanges)
+            .equatable()
         }
     }
 }

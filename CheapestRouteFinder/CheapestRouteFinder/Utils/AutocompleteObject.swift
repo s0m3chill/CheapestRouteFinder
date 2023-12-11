@@ -11,14 +11,14 @@ final class AutocompleteObject: ObservableObject {
     
     // MARK: - Properties
     @Published var suggestions: Set<String> = Set()
-
+    
     private let suggestionCountToShowAutocomplete = 1
-        
+    
     private let repository: RoutesRepositoryCaching
     private var cities: Set<String> {
         return repository.cachedCities()
     }
-        
+    
     // MARK: - Initialization
     init(repository: RoutesRepositoryCaching) {
         self.repository = repository

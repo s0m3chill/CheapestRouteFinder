@@ -274,10 +274,10 @@
 		47F962242B245E9F00EB50AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				47F962252B245EAB00EB50AE /* AutocompleteListView.swift */,
-				47F962282B245EC200EB50AE /* AutocompleteTextField.swift */,
-				47F9622B2B245EDE00EB50AE /* CheapestRouteMapView.swift */,
 				47F962312B245F1100EB50AE /* LocationInputView.swift */,
+				47F962282B245EC200EB50AE /* AutocompleteTextField.swift */,
+				47F962252B245EAB00EB50AE /* AutocompleteListView.swift */,
+				47F9622B2B245EDE00EB50AE /* CheapestRouteMapView.swift */,
 				47F962342B245F2D00EB50AE /* RouteAbsentReasonView.swift */,
 				47EA11402B25E45000CD8575 /* ActionButton.swift */,
 				47EA11432B25ED7900CD8575 /* CheapestRouteTextView.swift */,
