@@ -22,7 +22,7 @@ Anticipated and implemented L10N logic
 
 ## Possible improvements
 
-General UI/UX. I was mostly focused on app architecture rather than UI, because there's always room for improvement for UI :)
+General UI/UX. I was mostly focused on app architecture rather than UI, because one can always find a room for for UI improvements :)
 
 Need to add support for different JSON models. As for now only supports JSON from the URL from test assignment. <br/>
 
