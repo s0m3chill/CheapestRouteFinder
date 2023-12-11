@@ -17,40 +17,36 @@ struct AutocompleteListView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            VStack(alignment: .leading) {
-                if !suggestions.isEmpty {
-                    List(Array(suggestions), id: \.self) { suggestion in
-                        ZStack {
-                            Text(suggestion)
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                        .onTapGesture {
-                            selectedSuggestion = suggestion
-                            autocompleteObject.reset()
-                            isSuggestionTapped = false
-                            withAnimation {
-                                showList = false
-                            }
-                        }
+            if !suggestions.isEmpty || showList {
+                List(Array(suggestions), id: \.self) { suggestion in
+                    ZStack {
+                        Text(suggestion)
                     }
-                    .frame(maxHeight: showList ? UIScreen.main.bounds.height * heightProportionToScreen : 0)
-                    .opacity(showList ? Opacity.opaque.rawValue : Opacity.transparent.rawValue)
-                    .animation(.default, value: showList)
-                    .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/, value: UUID())
-                    .onAppear {
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    .onTapGesture {
+                        selectedSuggestion = suggestion
+                        autocompleteObject.reset()
+                        isSuggestionTapped = false
                         withAnimation {
-                            showList = true
+                            showList = false
                         }
                     }
-                    .listStyle(PlainListStyle())
                 }
+                .frame(maxHeight: showList ? UIScreen.main.bounds.height * heightProportionToScreen : 0)
+                .opacity(showList ? Opacity.opaque.rawValue : Opacity.transparent.rawValue)
+                .animation(.default, value: showList)
+                .animation(.easeIn, value: UUID())
+                .onAppear {
+                    withAnimation {
+                        showList = !suggestions.isEmpty
+                    }
+                }
+                .listStyle(PlainListStyle())
             }
         }
-        .onChange(of: suggestions.isEmpty) { oldValue, suggestionsEmpty in
-            if suggestionsEmpty {
-                withAnimation {
-                    showList = false
-                }
+        .onChange(of: suggestions.isEmpty) { _, suggestionsEmpty in
+            withAnimation {
+                showList = !suggestionsEmpty
             }
         }
     }

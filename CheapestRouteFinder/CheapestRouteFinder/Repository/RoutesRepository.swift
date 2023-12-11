@@ -18,7 +18,7 @@ protocol RoutesRepositoryCaching: AnyObject {
 }
 
 // We can use this repository for both Network and Database fetching
-// For the demo purposes I've added only Network and cache is 'private(set) var connections: [Connection] = []'
+// For the demo purposes I've added only Network
 final class RoutesRepository: ObservableObject {
     
     // MARK: - Properties
