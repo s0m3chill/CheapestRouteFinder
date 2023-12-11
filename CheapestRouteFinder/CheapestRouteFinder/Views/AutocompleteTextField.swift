@@ -22,7 +22,7 @@ struct AutocompleteTextField: View {
                     .frame(width: LayoutConstants.prefixTitleWidth.rawValue, alignment: .leading)
                 TextField(placeholderText, text: $userInput)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .autocorrectionDisabled()
+                    .keyboardType(.alphabet).autocorrectionDisabled()
                     .onChange(of: userInput) { oldValue, newValue in
                         if textFieldShouldObserveChanges {
                             autocompleteObject.autocomplete(newValue)
