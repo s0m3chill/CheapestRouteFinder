@@ -21,8 +21,8 @@ enum NetworkError: Error {
 final class NetworkService {
     
     // MARK: - Properties
-    fileprivate let routesUrlString: String
-    fileprivate let urlSession: URLSession
+    private let routesUrlString: String
+    private let urlSession: URLSession
     
     // MARK: - Initialization
     init(urlSession: URLSession = URLSession.shared,

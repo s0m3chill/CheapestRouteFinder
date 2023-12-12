@@ -9,11 +9,11 @@ import Foundation
 import Combine
 
 protocol RoutesRepositoryFetching: AnyObject {
-    func fetchConnections() -> AnyPublisher<[Connection], Error>
+    func fetchRoutes() -> AnyPublisher<[Connection], Error>
 }
 
 protocol RoutesRepositoryCaching: AnyObject {
-    func cachedConnections() -> [Connection]
+    func cachedRoutes() -> [Connection]
     func cachedCities() -> Set<String>
 }
 
@@ -23,7 +23,7 @@ final class RoutesRepository: ObservableObject {
     
     // MARK: - Properties
     private let routesDataFetching: RouteDataFetching
-    private var connections: [Connection] = []
+    private var routes: [Connection] = []
     private var cities: Set<String> = Set()
     
     // MARK: - Initialization
@@ -36,11 +36,11 @@ final class RoutesRepository: ObservableObject {
 
 extension RoutesRepository: RoutesRepositoryFetching {
     
-    func fetchConnections() -> AnyPublisher<[Connection], Error> {
+    func fetchRoutes() -> AnyPublisher<[Connection], Error> {
         return routesDataFetching.fetchConnectionsPublisher()
             .receive(on: DispatchQueue.main)
             .handleEvents(receiveOutput: { [weak self] connections in
-                self?.connections = connections
+                self?.routes = connections
                 self?.cities = connections.reduce(into: Set<String>()) { result, connection in
                     result.insert(connection.from)
                     result.insert(connection.to)
@@ -57,8 +57,8 @@ extension RoutesRepository: RoutesRepositoryFetching {
 
 extension RoutesRepository: RoutesRepositoryCaching {
     
-    func cachedConnections() -> [Connection] {
-        return connections
+    func cachedRoutes() -> [Connection] {
+        return routes
     }
     
     func cachedCities() -> Set<String> {

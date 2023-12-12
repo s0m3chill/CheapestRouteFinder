@@ -14,7 +14,7 @@ final class NetworkServiceTests: XCTestCase {
     // MARK: - Properties
     private var sut: NetworkService!
     private var cancellables = Set<AnyCancellable>()
-    private let connections = ConnectionsDataStub().cities
+    private let connections = RoutesDataStub().routes
     
     // MARK: - Setup
     override func setUp() {

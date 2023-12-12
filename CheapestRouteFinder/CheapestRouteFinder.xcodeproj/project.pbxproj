@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		47EA112B2B25BE3900CD8575 /* ConnectionsDataStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */; };
+		47EA112B2B25BE3900CD8575 /* RoutesDataStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EA112A2B25BE3900CD8575 /* RoutesDataStub.swift */; };
 		47EA112C2B25BEF900CD8575 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F962132B245DFB00EB50AE /* Constants.swift */; };
 		47EA112E2B25C49800CD8575 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 47EA112D2B25C49800CD8575 /* Localizable.xcstrings */; };
 		47EA112F2B25C49800CD8575 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 47EA112D2B25C49800CD8575 /* Localizable.xcstrings */; };
@@ -84,7 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsDataStub.swift; sourceTree = "<group>"; };
+		47EA112A2B25BE3900CD8575 /* RoutesDataStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesDataStub.swift; sourceTree = "<group>"; };
 		47EA112D2B25C49800CD8575 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		47EA11332B25C85600CD8575 /* StringsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsProvider.swift; sourceTree = "<group>"; };
 		47EA113A2B25D5FB00CD8575 /* RouteStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStateManager.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		47EA11502B26506300CD8575 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				47EA112A2B25BE3900CD8575 /* ConnectionsDataStub.swift */,
+				47EA112A2B25BE3900CD8575 /* RoutesDataStub.swift */,
 				47EA114C2B26501600CD8575 /* RoutesRepositoryMock.swift */,
 				47EA114E2B26504C00CD8575 /* MockUrlProtocol.swift */,
 			);
@@ -483,7 +483,7 @@
 				47EA112C2B25BEF900CD8575 /* Constants.swift in Sources */,
 				47F9620B2B245D9800EB50AE /* AutocompleteObject.swift in Sources */,
 				47F962232B245E7800EB50AE /* RoutesRepository.swift in Sources */,
-				47EA112B2B25BE3900CD8575 /* ConnectionsDataStub.swift in Sources */,
+				47EA112B2B25BE3900CD8575 /* RoutesDataStub.swift in Sources */,
 				47F9623A2B245F5700EB50AE /* RouteInputViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

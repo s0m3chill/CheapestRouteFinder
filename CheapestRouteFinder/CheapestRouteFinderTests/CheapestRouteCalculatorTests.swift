@@ -12,7 +12,7 @@ final class CheapestRouteCalculatorTests: XCTestCase {
         
     // MARK: - Tests
     func testCalculateCheapestRouteIfRouteExists() {
-        let connections = ConnectionsDataStub().cities
+        let connections = RoutesDataStub().routes
         let sut = CheapestRouteCalculator(connections: connections)
         let (route, price) = sut.calculateCheapestRoute(from: "Tokyo", to: "London")
         XCTAssertEqual(route.map { $0.from }, ["Tokyo"])
@@ -20,7 +20,7 @@ final class CheapestRouteCalculatorTests: XCTestCase {
     }
     
     func testCalculateSuperCheapRoute() {
-        var connections = ConnectionsDataStub().cities
+        var connections = RoutesDataStub().routes
         connections.append(Connection(from: "Tokyo", to: "London",
                                       coordinates: .init(from: .init(lat: 1, long: 1),
                                                          to: .init(lat: 2, long: 2)),
@@ -32,7 +32,7 @@ final class CheapestRouteCalculatorTests: XCTestCase {
     }
     
     func testCalculateAlternativeRouteUpdatedPrice() {
-        let connections = ConnectionsDataStub().citiesUpdatePriceFromTokyo
+        let connections = RoutesDataStub().routesWithUpdatedPriceFromTokyo
         let sut = CheapestRouteCalculator(connections: connections)
         let (route, price) = sut.calculateCheapestRoute(from: "Tokyo", to: "London")
         XCTAssertEqual(route.map { $0.from }, ["Tokyo", "Sydney", "Cape Town"])
@@ -40,7 +40,7 @@ final class CheapestRouteCalculatorTests: XCTestCase {
     }
     
     func testCalculateCheapestRouteIfRouteDoesNotExist() {
-        let connections = ConnectionsDataStub().cities
+        let connections = RoutesDataStub().routes
         let sut = CheapestRouteCalculator(connections: connections)
         let (route, price) = sut.calculateCheapestRoute(from: "Porto", to: "London")
         XCTAssertEqual(route.count, 0)
@@ -48,7 +48,7 @@ final class CheapestRouteCalculatorTests: XCTestCase {
     }
     
     func testCalculateCheapestRouteToSameLocation() {
-        let connections = ConnectionsDataStub().cities
+        let connections = RoutesDataStub().routes
         let sut = CheapestRouteCalculator(connections: connections)
         let (route, price) = sut.calculateCheapestRoute(from: "London", to: "London")
         XCTAssertEqual(route.count, 0)

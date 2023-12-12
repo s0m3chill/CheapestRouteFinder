@@ -15,8 +15,8 @@ final class RouteInputViewModel: ObservableObject {
     @Published var routeStateManager: RouteStateManager
     @Published var departureAutocomplete: AutocompleteObject
     @Published var destinationAutocomplete: AutocompleteObject
-    var connections: [Connection] {
-        repository.cachedConnections()
+    var routes: [Connection] {
+        repository.cachedRoutes()
     }
     var routeAvailabilityStatus: RouteAvailabilityStatus {
         routeStateManager.routeAvailabilityStatus
@@ -42,7 +42,7 @@ final class RouteInputViewModel: ObservableObject {
     
     // MARK: - API
     func fetchConnections() {
-        repository.fetchConnections()
+        repository.fetchRoutes()
             .sink { [weak self] completion in
                 if case let .failure(error) = completion {
                     self?.routeViewModelState = .error(error.localizedDescription)
@@ -53,7 +53,7 @@ final class RouteInputViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func findCheapestRoute() {
+    func calculateCheapestRoute() {
         routeStateManager.calculateCheapestRoute()
     }
 }

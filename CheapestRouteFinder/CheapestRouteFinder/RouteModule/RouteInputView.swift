@@ -42,7 +42,7 @@ struct RouteInputView: View {
                     .equatable()
                     ActionButton(title: StringsProvider().string(forKey: .findCheapestRoute)) {
                         hideKeyboardOnButtonTap()
-                        viewModel.findCheapestRoute()
+                        viewModel.calculateCheapestRoute()
                         isShowingModal = true
                     }
                     .equatable()

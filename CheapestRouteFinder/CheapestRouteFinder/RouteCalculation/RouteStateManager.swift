@@ -34,7 +34,7 @@ final class RouteStateManager {
             return
         }
         
-        let calculator = CheapestRouteCalculator(connections: repository.cachedConnections())
+        let calculator = CheapestRouteCalculator(connections: repository.cachedRoutes())
         let cheapestResult = calculator.calculateCheapestRoute(from: departureLocation, to: destinationLocation)
         cheapestRoute = cheapestResult.route
         cheapestPrice = cheapestResult.price

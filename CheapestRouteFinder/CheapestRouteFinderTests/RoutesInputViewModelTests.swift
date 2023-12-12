@@ -14,7 +14,7 @@ final class RoutesInputViewModelTests: XCTestCase {
     private var sut: RouteInputViewModel!
     private var repository: RoutesRepositoryMock!
     private var cancellables = Set<AnyCancellable>()
-    private let connections = ConnectionsDataStub().cities
+    private let routes = RoutesDataStub().routes
     
     // MARK: - Setup
     @MainActor override func setUp() {
@@ -34,20 +34,20 @@ final class RoutesInputViewModelTests: XCTestCase {
     
     // MARK: - Tests
     func testCachedConnectionsIsCalled() {
-        repository.connections = connections
-        _ = sut.connections
-        XCTAssertEqual(repository.isCalled, .cachedConnections)
+        repository.routes = routes
+        _ = sut.routes
+        XCTAssertEqual(repository.isCalled, .cachedRoutes)
     }
     
     func testFetchConnectionsIsCalled() {
         sut.fetchConnections()
-        XCTAssertEqual(repository.isCalled, .fetchConnections)
+        XCTAssertEqual(repository.isCalled, .fetchRoutes)
     }
     
     func testFetchConnectionsSuccess() {
         let expectation = XCTestExpectation(description: "Fetch connections success")
         
-        repository.connections = connections
+        repository.routes = routes
         sut.$routeViewModelState
             .dropFirst()
             .sink { state in
@@ -59,7 +59,7 @@ final class RoutesInputViewModelTests: XCTestCase {
         sut.fetchConnections()
         
         wait(for: [expectation], timeout: 1)
-        XCTAssertEqual(sut.connections.count, connections.count)
+        XCTAssertEqual(sut.routes.count, routes.count)
     }
     
     func testFetchConnectionsFailure() {
@@ -80,24 +80,24 @@ final class RoutesInputViewModelTests: XCTestCase {
     }
     
     func testFindCheapestRouteCalledWithSelectedCities() {
-        repository.connections = connections
+        repository.routes = routes
         sut.routeStateManager.departureLocation = "London"
         sut.routeStateManager.destinationLocation = "Porto"
-        sut.findCheapestRoute()
+        sut.calculateCheapestRoute()
         XCTAssertNotEqual(sut.cheapestRoute.count, 50)
     }
     
     func testFindCheapestRouteCalledWithEmptyCities() {
-        repository.connections = connections
-        sut.findCheapestRoute()
+        repository.routes = routes
+        sut.calculateCheapestRoute()
         XCTAssertEqual(sut.routeAvailabilityStatus, .noLocation)
     }
     
     func testFindCheapestRouteCalledWithSameCity() {
-        repository.connections = connections
+        repository.routes = routes
         sut.routeStateManager.departureLocation = "London"
         sut.routeStateManager.destinationLocation = "London"
-        sut.findCheapestRoute()
+        sut.calculateCheapestRoute()
         XCTAssertEqual(sut.routeAvailabilityStatus, .sameLocation("London"))
     }
     

@@ -12,30 +12,30 @@ import Combine
 final class RoutesRepositoryMock: RoutesRepositoryFetching & RoutesRepositoryCaching {
     
     // MARK: - Properties
-    var connections: [Connection] = []
+    var routes: [Connection] = []
     var error: Error?
     
     enum IsCalled {
         case none
-        case fetchConnections
-        case cachedConnections
+        case fetchRoutes
+        case cachedRoutes
         case cachedCities
     }
     var isCalled: IsCalled = .none
     
     // MARK: - API
-    func fetchConnections() -> AnyPublisher<[Connection], Error> {
-        isCalled = .fetchConnections
+    func fetchRoutes() -> AnyPublisher<[Connection], Error> {
+        isCalled = .fetchRoutes
         if let error = error {
             return Fail(error: error).eraseToAnyPublisher()
         } else {
-            return Just(connections).setFailureType(to: Error.self).eraseToAnyPublisher()
+            return Just(routes).setFailureType(to: Error.self).eraseToAnyPublisher()
         }
     }
     
-    func cachedConnections() -> [Connection] {
-        isCalled = .cachedConnections
-        return connections
+    func cachedRoutes() -> [Connection] {
+        isCalled = .cachedRoutes
+        return routes
     }
     
     func cachedCities() -> Set<String> {
