@@ -33,18 +33,18 @@ final class RoutesInputViewModelTests: XCTestCase {
     }
     
     // MARK: - Tests
-    func testCachedConnectionsIsCalled() {
+    func testCachedRoutesIsCalled() {
         repository.routes = routes
         _ = sut.routes
         XCTAssertEqual(repository.isCalled, .cachedRoutes)
     }
     
-    func testFetchConnectionsIsCalled() {
-        sut.fetchConnections()
+    func testFetchRoutesIsCalled() {
+        sut.fetchRoutes()
         XCTAssertEqual(repository.isCalled, .fetchRoutes)
     }
     
-    func testFetchConnectionsSuccess() {
+    func testFetchRoutesSuccess() {
         let expectation = XCTestExpectation(description: "Fetch connections success")
         
         repository.routes = routes
@@ -56,13 +56,13 @@ final class RoutesInputViewModelTests: XCTestCase {
             }
             .store(in: &cancellables)
         
-        sut.fetchConnections()
+        sut.fetchRoutes()
         
         wait(for: [expectation], timeout: 1)
         XCTAssertEqual(sut.routes.count, routes.count)
     }
     
-    func testFetchConnectionsFailure() {
+    func testFetchRoutesFailure() {
         let expectation = XCTestExpectation(description: "Fetch connections failure")
         let error = NSError(domain: "TestError", code: 404, userInfo: nil)
         repository.error = error
@@ -75,7 +75,7 @@ final class RoutesInputViewModelTests: XCTestCase {
             }
             .store(in: &cancellables)
         
-        sut.fetchConnections()
+        sut.fetchRoutes()
         wait(for: [expectation], timeout: 1)
     }
     

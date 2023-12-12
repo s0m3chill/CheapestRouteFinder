@@ -14,7 +14,7 @@ final class NetworkServiceTests: XCTestCase {
     // MARK: - Properties
     private var sut: NetworkService!
     private var cancellables = Set<AnyCancellable>()
-    private let connections = RoutesDataStub().routes
+    private let routes = RoutesDataStub().routes
     
     // MARK: - Setup
     override func setUp() {
@@ -33,14 +33,14 @@ final class NetworkServiceTests: XCTestCase {
     }
 
     // MARK: - Tests
-    func testFetchConnectionsSuccess() {
-        guard let mockedData = try? JSONEncoder().encode(RouteData(connections: connections)),
+    func testFetchRoutesSuccess() {
+        guard let mockedData = try? JSONEncoder().encode(RouteData(connections: routes)),
               let url = URL(string: Constants.fetchUrl.rawValue)
         else {
             XCTFail("Response setup failure")
             return
         }
-        let expectation = XCTestExpectation(description: "Fetch connections success")
+        let expectation = XCTestExpectation(description: "Fetch routes success")
         
         let response = HTTPURLResponse(url: url, statusCode: HTTPResponseCode.success.rawValue, httpVersion: nil, headerFields: nil)
         MockURLProtocol.mockURLs = [url: (nil, mockedData, response)]
@@ -54,14 +54,14 @@ final class NetworkServiceTests: XCTestCase {
                     XCTFail("Failure with error: \(error)")
                 }
             }, receiveValue: { fetchedConnections in
-                XCTAssertEqual(fetchedConnections, self.connections)
+                XCTAssertEqual(fetchedConnections, self.routes)
             })
             .store(in: &cancellables)
         
         wait(for: [expectation], timeout: 1)
     }
 
-    func testFetchConnectionsFailureInvalidResponse() {
+    func testFetchRoutesFailureInvalidResponse() {
         guard let mockedData = try? JSONEncoder().encode("invalid_response"),
               let url = URL(string: Constants.fetchUrl.rawValue)
         else {

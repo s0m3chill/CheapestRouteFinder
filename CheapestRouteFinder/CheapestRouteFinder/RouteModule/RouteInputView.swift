@@ -50,7 +50,7 @@ struct RouteInputView: View {
             }
             .padding()
             .onAppear(perform: {
-                self.viewModel.fetchConnections()
+                self.viewModel.fetchRoutes()
             })
         }
         .sheet(isPresented: $isShowingModal) {

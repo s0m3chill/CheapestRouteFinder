@@ -41,7 +41,7 @@ final class RouteInputViewModel: ObservableObject {
     }
     
     // MARK: - API
-    func fetchConnections() {
+    func fetchRoutes() {
         repository.fetchRoutes()
             .sink { [weak self] completion in
                 if case let .failure(error) = completion {
