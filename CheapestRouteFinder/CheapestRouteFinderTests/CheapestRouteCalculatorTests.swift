@@ -17,7 +17,7 @@ final class CheapestRouteCalculatorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let connections = ConnectionsDataStub().connections
+        let connections = ConnectionsDataStub().cities
         sut = CheapestRouteCalculator(connections: connections)
     }
     
@@ -29,19 +29,19 @@ final class CheapestRouteCalculatorTests: XCTestCase {
     
     // MARK: - Tests
     func testCalculateCheapestRouteIfRouteExists() {
-        let (route, price) = sut.calculateCheapestRoute(from: "A", to: "D")
-        XCTAssertEqual(route.map { $0.from }, ["A", "B", "C"])
-        XCTAssertEqual(price, 30)
+        let (route, price) = sut.calculateCheapestRoute(from: "Tokyo", to: "London")
+        XCTAssertEqual(route.map { $0.from }, ["Tokyo"])
+        XCTAssertEqual(price, 200)
     }
     
     func testCalculateCheapestRouteIfRouteDoesNotExist() {
-        let (route, price) = sut.calculateCheapestRoute(from: "B", to: "A")
+        let (route, price) = sut.calculateCheapestRoute(from: "Porto", to: "London")
         XCTAssertEqual(route.count, 0)
         XCTAssertEqual(price, 0)
     }
     
     func testCalculateCheapestRouteToSameLocation() {
-        let (route, price) = sut.calculateCheapestRoute(from: "B", to: "B")
+        let (route, price) = sut.calculateCheapestRoute(from: "London", to: "London")
         XCTAssertEqual(route.count, 0)
         XCTAssertEqual(price, 0)
     }

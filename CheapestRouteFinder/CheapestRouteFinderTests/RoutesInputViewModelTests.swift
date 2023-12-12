@@ -14,7 +14,7 @@ final class RoutesInputViewModelTests: XCTestCase {
     private var sut: RouteInputViewModel!
     private var repository: RoutesRepositoryMock!
     private var cancellables = Set<AnyCancellable>()
-    private let connections = ConnectionsDataStub().connections
+    private let connections = ConnectionsDataStub().cities
     
     // MARK: - Setup
     @MainActor override func setUp() {
@@ -81,10 +81,10 @@ final class RoutesInputViewModelTests: XCTestCase {
     
     func testFindCheapestRouteCalledWithSelectedCities() {
         repository.connections = connections
-        sut.routeStateManager.departureLocation = "A"
-        sut.routeStateManager.destinationLocation = "D"
+        sut.routeStateManager.departureLocation = "London"
+        sut.routeStateManager.destinationLocation = "Porto"
         sut.findCheapestRoute()
-        XCTAssertNotEqual(sut.cheapestRoute.count, 0)
+        XCTAssertNotEqual(sut.cheapestRoute.count, 50)
     }
     
     func testFindCheapestRouteCalledWithEmptyCities() {
@@ -95,10 +95,10 @@ final class RoutesInputViewModelTests: XCTestCase {
     
     func testFindCheapestRouteCalledWithSameCity() {
         repository.connections = connections
-        sut.routeStateManager.departureLocation = "A"
-        sut.routeStateManager.destinationLocation = "A"
+        sut.routeStateManager.departureLocation = "London"
+        sut.routeStateManager.destinationLocation = "London"
         sut.findCheapestRoute()
-        XCTAssertEqual(sut.routeAvailabilityStatus, .sameLocation("A"))
+        XCTAssertEqual(sut.routeAvailabilityStatus, .sameLocation("London"))
     }
     
 }
