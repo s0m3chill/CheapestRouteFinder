@@ -1,6 +1,6 @@
 # CheapestRouteFinder
 
-An app that assists users in finding the cheapest routes between destinations
+An app that assists users in finding the cheapest routes between destinations using Dijkstra's Algorithm
 
 ## Prerequisites
 
