@@ -7,8 +7,8 @@
 
 import Foundation
 
+///  Dijkstra's algorithm
 struct CheapestRouteCalculator {
-    
     // MARK: - Properties
     private var connections: [Connection] = []
     
@@ -19,51 +19,44 @@ struct CheapestRouteCalculator {
     
     // MARK: - API
     func calculateCheapestRoute(from start: String, to destination: String) -> (route: [Connection], price: Int) {
-        var routes = [[Connection]]()
-        var visited = Set<String>()
-        var currentRoute = [Connection]()
+        var cheapestPrices: [String: Int] = [:]
+        var previousNodes: [String: Connection] = [:]
         
-        calculateCheapestRouteRecursive(from: start,
-                                        to: destination,
-                                        visited: &visited,
-                                        currentRoute: &currentRoute,
-                                        routes: &routes)
-        
-        let cheapestRoute = routes.min { $0.map { $0.price }.reduce(0, +) < $1.map { $0.price }.reduce(0, +) } ?? []
-        let cheapestPrice = price(forRoute: cheapestRoute)
-        
-        return (cheapestRoute, cheapestPrice)
-    }
-    
-    // MARK: - Private
-    private func calculateCheapestRouteRecursive(from current: String,
-                                                 to destination: String,
-                                                 visited: inout Set<String>,
-                                                 currentRoute: inout [Connection],
-                                                 routes: inout [[Connection]]) {
-        if current == destination {
-            routes.append(currentRoute)
-            return
+        connections.forEach { connection in
+            cheapestPrices[connection.from] = Int.max
+            cheapestPrices[connection.to] = Int.max
         }
         
-        visited.insert(current)
+        cheapestPrices[start] = 0
         
-        let possibleConnections = connections.filter { $0.from == current && !visited.contains($0.to) }
-        for connection in possibleConnections {
-            currentRoute.append(connection)
-            calculateCheapestRouteRecursive(from: connection.to,
-                                            to: destination,
-                                            visited: &visited,
-                                            currentRoute: &currentRoute,
-                                            routes: &routes)
-            currentRoute.removeLast()
+        var queue = connections.filter { $0.from == start }
+        
+        while !queue.isEmpty {
+            let currentConnection = queue.removeFirst()
+            
+            if let currentPrice = cheapestPrices[currentConnection.from],
+               let priceToCurrent = cheapestPrices[currentConnection.to],
+               currentPrice + currentConnection.price < priceToCurrent {
+                cheapestPrices[currentConnection.to] = currentPrice + currentConnection.price
+                previousNodes[currentConnection.to] = currentConnection
+                
+                let connectionsFromCurrent = connections.filter { $0.from == currentConnection.to }
+                queue.append(contentsOf: connectionsFromCurrent)
+            }
         }
         
-        visited.remove(current)
+        var cheapestRoute: [Connection] = []
+        var currentNode = destination
+        var totalCost = cheapestPrices[destination] ?? 0
+        if totalCost == Int.max {
+            totalCost = 0
+        }
+        
+        while let previousNode = previousNodes[currentNode] {
+            cheapestRoute.insert(previousNode, at: 0)
+            currentNode = previousNode.from
+        }
+        
+        return (cheapestRoute, totalCost)
     }
-    
-    private func price(forRoute connections: [Connection]) -> Int {
-        return connections.reduce(0) { $0 + $1.price }
-    }
-    
 }
